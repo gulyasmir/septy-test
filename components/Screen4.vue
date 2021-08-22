@@ -1,10 +1,12 @@
 <template>
-$END$
+  <div class="screen">
+    screen4
+  </div>
 </template>
 
 <script>
 export default {
-name: "Screen4"
+  name: "Screen4"
 }
 </script>
 

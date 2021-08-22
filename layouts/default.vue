@@ -20,5 +20,8 @@ export default {
 </script>
 
 <style>
-
+.el-main{
+  margin-top: -60px;
+  z-index: 1;
+}
 </style>

@@ -1,21 +1,13 @@
 <template>
   <div class="header">
+    <div class="logo">
+      <el-image :src="logoUrl"></el-image>
+    </div>
   <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-    <el-menu-item index="1">Processing Center</el-menu-item>
-    <el-submenu index="2">
-      <template slot="title">Workspace</template>
-      <el-menu-item index="2-1">item one</el-menu-item>
-      <el-menu-item index="2-2">item two</el-menu-item>
-      <el-menu-item index="2-3">item three</el-menu-item>
-      <el-submenu index="2-4">
-        <template slot="title">item four</template>
-        <el-menu-item index="2-4-1">item one</el-menu-item>
-        <el-menu-item index="2-4-2">item two</el-menu-item>
-        <el-menu-item index="2-4-3">item three</el-menu-item>
-      </el-submenu>
-    </el-submenu>
-    <el-menu-item index="3" disabled>Info</el-menu-item>
-    <el-menu-item index="4"><a href="https://www.ele.me" target="_blank">Orders</a></el-menu-item>
+    <el-menu-item index="1">SeptyTest</el-menu-item>
+    <el-menu-item index="2">Разработки</el-menu-item>
+    <el-menu-item index="3">Написать нам</el-menu-item>
+    <el-menu-item index="4">Контакты</el-menu-item>
   </el-menu>
 
 </div>
@@ -27,6 +19,7 @@ export default {
   data() {
     return {
       activeIndex: '1',
+      logoUrl: require(`@/static/image/logo.png`)
 
     };
   },
@@ -38,6 +31,46 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss">
+.header{
+  height: 72px;
+  width: 1175px;
+  padding: 10px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  z-index: 10;
 
+.el-menu{
+  background: none;
+  border: none;
+  z-index: 10;
+  width: 50%;
+
+  li{
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+}
+  .el-menu--horizontal>.el-menu-item.is-active {
+    border-bottom:none;
+    color: #252525;
+  ;
+  }
+.logo {
+  min-width: 170px;
+  height: 62px;
+  z-index: 10;
+
+  img{
+    height: 100%;
+    width: auto;
+    z-index: 10;
+  }
+}
+}
 </style>
