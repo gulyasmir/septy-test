@@ -1,6 +1,6 @@
 <template>
   <div class="screen">
-    <h2>Вместе с SeptyTest Вы самостоятельно за 2-3 минуты можете:</h2>
+    <h2>Вместе с SeptyTest Вы самостоятельно <br> за 2-3 минуты можете:</h2>
     <el-row :gutter="12">
       <el-col
         v-for="item in featuresList"
@@ -9,11 +9,10 @@
         <template  v-if="item.icon">
           <div class="features">
             <el-card shadow="hover">
-
                 <el-image
                   style="width: 39px; height: 39px"
-                  :src="iconLink(item.icon)"></el-image>
-
+                  :src="iconLink(item.icon)">
+                </el-image>
               <div class="text">
                 {{item.text}}
               </div>
@@ -62,29 +61,30 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
 
-
-.el-card{
-  height: 210px;
-  background: var(--white);
-  border-radius: 20px;
-  border: none;
-  p{
-    text-transform: uppercase;
-  }
-}
-.el-card__body{
-  padding: 20px;
-}
-
-.el-image{
-  padding-bottom: 32px;
-}
 .features{
   padding: 8px 2px;
 
+  .el-card{
+    height: 210px;
+    background: var(--white);
+    border-radius: 20px;
+    border: none;
+    p{
+      text-transform: uppercase;
+    }
+  }
+  .el-card__body{
+    padding: 20px;
+  }
+
+  .el-image{
+    padding-bottom: 32px;
+  }
+
 }
+
 .bg-blue{
   .el-card{
     background: var(--blue);
@@ -92,7 +92,8 @@ export default {
 
   }
   :hover{
-    box-shadow:5px 5px 15px 10px rgba(38, 94, 215, 0.2);
+    box-shadow:1px 15px 15px 10px rgba(38, 94, 215, 0.2);
   }
 }
+
 </style>
