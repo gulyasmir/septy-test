@@ -2,8 +2,9 @@
     <div class="screen">
       <div class="top">
         <div class="left">
+          image
           <el-image
-            :src="iconLink('screen5-img.png')">
+            :src="linkImg">
           </el-image>
         </div>
         <div class="right">
@@ -42,13 +43,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.bg-white{
-  background: var(--white);
-  height: 100vh;
-}
+
 .screen{
 
   .top{
+    width: 100%;
     display: flex;
     justify-content: space-between;
     padding-bottom: 70px;
@@ -61,24 +60,7 @@ export default {
     }
   }
   .bottom{
-    .el-col{
-      padding: 10px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
 
-      .el-image{
-        margin: 16px 0;
-      }
-      p{
-        padding-left: 10px;
-      }
-
-    }
-    .blue{
-      color: var(--blue);
-      font-weight: 700;
-    }
   }
 }
 

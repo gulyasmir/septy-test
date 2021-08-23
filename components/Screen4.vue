@@ -68,10 +68,12 @@ export default {
 .bg-white{
   background: var(--white);
   height: 100vh;
+  width: 100%;
 }
 .screen{
 
   .top{
+    width: 100%;
      display: flex;
      justify-content: space-between;
      padding-bottom: 70px;
