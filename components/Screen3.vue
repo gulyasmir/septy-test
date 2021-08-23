@@ -52,6 +52,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.screen{
+  padding-bottom: 134px;
+}
   .test-for{
     display: flex;
     justify-content: space-between;
