@@ -11,7 +11,7 @@
             <el-card shadow="hover">
                 <el-image
                   style="width: 39px; height: 39px"
-                  :src="iconLink(item.icon)">
+                  :src="imgLink(item.icon)">
                 </el-image>
               <div class="text">
                 {{item.text}}
@@ -35,6 +35,7 @@
 </template>
 
 <script>
+import imageLink from '@/plugins/imageLink'
 export default {
   name: "Screen2",
   data(){
@@ -54,8 +55,8 @@ export default {
     }
   },
   methods:{
-      iconLink(iconName){
-        return require('/static/image/' + iconName)
+    imgLink(iconName){
+        return imageLink(iconName)
       }
   }
 }

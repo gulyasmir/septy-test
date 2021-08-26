@@ -10,7 +10,7 @@
       </div>
       <div class="right">
         <el-image
-          :src="iconLink('screen4-img.png')">
+          :src="imgLink(linkImg)">
         </el-image>
       </div>
     </div>
@@ -25,7 +25,7 @@
         :span="6">
         <el-image
           style="width: 39px; height: 39px"
-          :src="iconLink(item.icon)">
+          :src="imgLink(item.icon)">
         </el-image>
         <p> {{item.text}}</p>
 
@@ -36,11 +36,12 @@
 </template>
 
 <script>
+import imageLink from '@/plugins/imageLink'
 export default {
   name: "Screen4",
   data() {
     return {
-      linkImg:require(`@/static/image/screen4-img.png`),
+      linkImg:'screen4-img.png',
       linkIcons:[
         {id:1, icon:'home.svg', text:'Объекты коммунального хозяйства'},
         {id:2, icon:'people.svg', text:'Организации социальной сферы и сферы обслуживания'},
@@ -57,8 +58,8 @@ export default {
     }
   },
   methods:{
-    iconLink(iconName){
-      return require('/static/image/' + iconName)
+    imgLink(iconName){
+      return imageLink(iconName)
     }
   }
 }

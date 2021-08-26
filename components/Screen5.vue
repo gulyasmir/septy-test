@@ -3,7 +3,7 @@
       <div class="top">
         <div class="left">
           <el-image
-            :src="linkImg">
+            :src="imgLink(linkImg)">
           </el-image>
         </div>
         <div class="right">
@@ -24,49 +24,59 @@
             Вы можете оставить заявку на разработку или производство SeptyTest, либо задать вопрос, связанный с применением продукции. Пожалуйста, заполните форму и отправьте свой вопрос.
           </p>
         </div>
+        </div>
+
         <div class="form">
-          <el-form ref="form" :model="form" label-width="120px">
-            <el-form-item>
-              <el-input
-                v-model="form.name"
-                inline="true"
-                placeholder="Activity zone"
-              ></el-input>
-            </el-form-item>
-            <el-form-item
-              prop="email"
-              placeholder="Email"
-              :rules="[
-      { required: true, message: 'Please input email address', trigger: 'blur' },
-      { type: 'email', message: 'Please input correct email address', trigger: ['blur', 'change'] }
-    ]"
-            >
-              <el-input v-model="form.email"></el-input>
-            </el-form-item>
+          <el-form ref="form"  :model="form" label-width="0">
+            <div class="left">
+
+              <el-form-item>
+                <el-input
+                  v-model="form.name"
+                  placeholder="Ваше имя"
+                ></el-input>
+              </el-form-item>
+
+              <el-form-item
+                prop="email"
+                placeholder="Ваш Email"
+                :rules="[
+                  { required: true, message: 'Please input email address', trigger: 'blur' },
+                  { type: 'email', message: 'Please input correct email address', trigger: ['blur', 'change'] }
+                ]"
+              >
+                <el-input v-model="form.email"></el-input>
+              </el-form-item>
+
+              </div>
+
+            <div class="right">
             <el-form-item>
               <el-input
                 v-model="form.text"
                 inline="true"
-                placeholder="Activity zone"
+                placeholder="Сообщение"
               ></el-input>
             </el-form-item>
 
             <el-form-item class="button">
-              <el-button  @click="onSubmit">Create</el-button>
+              <el-button  @click="onSubmit">Отправить</el-button>
 
             </el-form-item>
+            </div>
           </el-form>
         </div>
       </div>
-    </div>
+
 </template>
 
 <script>
+import imageLink from '@/plugins/imageLink'
 export default {
   name: "Screen5",
   data() {
     return {
-      linkImg:require(`@/static/image/screen5-img.png`),
+      linkImg:'screen5-img.png',
       form: {
         name: '',
         email: '',
@@ -76,8 +86,8 @@ export default {
     }
   },
   methods:{
-    iconLink(iconName){
-      return require('/static/image/' + iconName)
+    imgLink(iconName){
+      return imageLink(iconName)
     },
     onSubmit() {
       console.log('submit!');
@@ -89,23 +99,36 @@ export default {
 <style lang="scss" scoped>
 
 .screen{
-
+  .left{
+    width: 50%;
+  }
+  .right{
+    width: 50%;
+  }
   .top{
     width: 100%;
     display: flex;
     justify-content: space-between;
     padding-bottom: 70px;
 
-    .left{
-      width: 50%;
-    }
-    .right{
-      width: 50%;
-    }
   }
-  .bottom{
+  .bottom, .el-form{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 70px;
 
   }
+
+  .form{
+    .left {
+      .el-form-item{
+        width: 50%;
+        float: left;
+      }
+    }
+  }
+
 }
 
 </style>

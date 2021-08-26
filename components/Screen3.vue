@@ -2,7 +2,7 @@
   <div class="screen">
     <div class="test-for">
       <div class="img">
-        <el-image :src="linkImgFor"></el-image>
+        <el-image :src="imgLink(linkImgFor)"></el-image>
       </div>
       <div class="list">
         <h2>Именно SeptyTest:</h2>
@@ -31,11 +31,12 @@
 </template>
 
 <script>
+import imageLink from '@/plugins/imageLink'
 export default {
   name: "Screen3",
   data() {
     return {
-      linkImgFor:require(`@/static/image/imagefor.png`),
+      linkImgFor:'imagefor.png',
       listFor:[
         {id:1, text:'Для любых видов дезинфицирующих средств', hideText:'Продукция маркируется индивидуально под ваши требования, в зависимости от внедренной на вашем предприятии системы автоматического учета товара'},
         {id:2, text:'Производится под ваш заказ в любых количествах', hideText:'Продукция маркируется индивидуально под ваши требования, в зависимости от внедренной на вашем предприятии системы автоматического учета товара'},
@@ -46,6 +47,11 @@ export default {
         {id:7, text:'Не требует утилизации неперерабатываемых отходов', hideText:'Продукция маркируется индивидуально под ваши требования, в зависимости от внедренной на вашем предприятии системы автоматического учета товара'}
       ]
 
+    }
+  },
+  methods:{
+    imgLink(iconName){
+      return imageLink(iconName)
     }
   }
 }
