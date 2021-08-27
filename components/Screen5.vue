@@ -39,13 +39,13 @@
 
               <el-form-item
                 prop="email"
-                placeholder="Ваш Email"
+
                 :rules="[
-                  { required: true, message: 'Please input email address', trigger: 'blur' },
-                  { type: 'email', message: 'Please input correct email address', trigger: ['blur', 'change'] }
+                  { required: true, message: 'Пожалуйста, введите email', trigger: 'blur' },
+                  { type: 'email', message: 'Email некорректен', trigger: ['blur', 'change'] }
                 ]"
               >
-                <el-input v-model="form.email"></el-input>
+                <el-input v-model="form.email"  placeholder="Ваш Email"></el-input>
               </el-form-item>
 
               <div class="text">

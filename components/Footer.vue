@@ -1,14 +1,14 @@
 <template>
   <div class="footer">
-   <el-row>
-     <el-col :span="12">
+    <el-row :gutter="10">
+      <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
        <el-image
          :src="imgLink(linkImg)">
        </el-image>
        <span class="contacts"> :Контакты</span>
 
      </el-col>
-     <el-col :span="6">
+      <el-col :xs="24" :sm="24" :md="6" :lg="6" :xl="6">
         <p>
           Россия, Екатеринбург, Чапаева, 72
         </p>
@@ -16,7 +16,7 @@
          Написать нам в WhatsApp
        </a>
      </el-col>
-     <el-col :span="6">
+      <el-col :xs="24" :sm="24" :md="6" :lg="6" :xl="6">
        <p>
        <a href="#">
          info@chymes.ru
@@ -58,6 +58,9 @@ name: "Footer",
 
   .whatsapp{
     color: var(--green);
+    padding:15px 15px 15px 40px;
+    background: url("../static/image/whatsapp.svg") no-repeat left center;
+
   }
   .contacts{
     font-weight: bold;
