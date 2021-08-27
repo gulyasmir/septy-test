@@ -48,6 +48,9 @@
                 <el-input v-model="form.email"></el-input>
               </el-form-item>
 
+              <div class="text">
+                Нажимая на кнопку «Отправить запрос», Вы даете согласие на обработку своих персональных данных
+              </div>
               </div>
 
             <div class="right">
@@ -59,7 +62,10 @@
               ></el-input>
             </el-form-item>
 
+
+
             <el-form-item class="button">
+
               <el-button  @click="onSubmit">Отправить</el-button>
 
             </el-form-item>
@@ -126,6 +132,13 @@ export default {
         width: 50%;
         float: left;
       }
+    }
+    .el-input{
+      padding: 5px;
+      width: 98%;
+    }
+    .button{
+      margin-left: 5px;
     }
   }
 
