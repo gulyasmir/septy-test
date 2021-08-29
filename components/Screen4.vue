@@ -1,36 +1,38 @@
 <template>
   <div class="bg-white">
     <div class="screen">
-    <div class="top">
-      <div class="left">
-        <h2>Кому подходит</h2>
-        <p>
-          SeptyTest позволяет избежать технических ошибок при работе с дезинфицирующими средствами в любых областях использования дезинфицирующих средств. Благодаря простоте применения и тщательно выверенной методике, SeptyTest может одинаково эффективно использоваться как обученными специалистами, так и персоналом без специальных навыков.
-        </p>
-      </div>
-      <div class="right">
-        <el-image
-          :src="imgLink(linkImg)">
-        </el-image>
-      </div>
-    </div>
-    <div class="bottom">
-      <el-col :span="12">
-        <span class="blue"> Где можно использовать:</span>
+      <el-row :gutter="10">
+        <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
+          <h2>Кому подходит</h2>
+          <p>
+            SeptyTest позволяет избежать технических ошибок при работе с дезинфицирующими средствами в любых областях использования дезинфицирующих средств. Благодаря простоте применения и тщательно выверенной методике, SeptyTest может одинаково эффективно использоваться как обученными специалистами, так и персоналом без специальных навыков.
+          </p>
+        </el-col>
+        <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
+          <el-image
+            :src="imgLink(linkImg)">
+          </el-image>
+        </el-col>
+      </el-row>
 
-      </el-col>
-      <el-col
-        v-for="item in linkIcons"
-        :key="item.id"
-        :span="6">
-        <el-image
-          style="width: 39px; height: 39px"
-          :src="imgLink(item.icon)">
-        </el-image>
-        <p> {{item.text}}</p>
-
-      </el-col>
-    </div>
+        <el-row :gutter="10">
+          <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
+            <div class="flex-text">
+             <span class="blue"> Где можно использовать:</span>
+            </div>
+          </el-col>
+          <el-col :xs="24" :sm="24" :md="12" :lg="6" :xl="6"
+          v-for="item in linkIcons"
+          :key="item.id">
+            <div class="flex">
+            <el-image
+              style="width: 39px; height: 39px"
+              :src="imgLink(item.icon)">
+            </el-image>
+            <p> {{item.text}}</p>
+            </div>
+           </el-col>
+        </el-row>
   </div>
   </div>
 </template>
@@ -73,39 +75,27 @@ export default {
 }
 .screen{
 
-  .top{
-    width: 100%;
-     display: flex;
-     justify-content: space-between;
-     padding-bottom: 70px;
 
-    .left{
-      width: 50%;
-    }
-    .right{
-      width: 50%;
-    }
-   }
-  .bottom{
-    .el-col{
-      padding: 10px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+  .flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-      .el-image{
-        margin: 16px 0;
-      }
-      p{
-        padding-left: 10px;
-      }
-
+    .el-image{
+      padding-right: 15px;
     }
+  }
+  .flex-text{
+    display: flex;
+    align-items: center;
+    height: 70px;
+  }
     .blue{
       color: var(--blue);
       font-weight: 700;
+      font-size: 18px;
     }
-  }
+
 }
 
 </style>

@@ -38,7 +38,8 @@ export default {
   align-items: center;
 
   .info{
-    width: 1175px;
+    width:100%;
+    max-width: 1175px;
     margin: 0 auto;
 
     h1{

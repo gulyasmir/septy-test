@@ -1,11 +1,10 @@
 <template>
   <div class="screen">
     <h2>Вместе с SeptyTest Вы самостоятельно <br> за 2-3 минуты можете:</h2>
-    <el-row :gutter="12">
-      <el-col
+    <el-row :gutter="10">
+      <el-col :xs="24" :sm="24" :md="12" :lg="6" :xl="6"
         v-for="item in featuresList"
-        :key="item.id"
-        :span="6">
+        :key="item.id">
         <template  v-if="item.icon">
           <div class="features">
             <el-card shadow="hover">

@@ -10,12 +10,18 @@
     <el-menu-item index="4">Контакты</el-menu-item>
   </el-menu>
 
+
+
 </div>
 </template>
 
 <script>
+
 export default {
   name: "Header",
+  components:{
+
+  },
   data() {
     return {
       activeIndex: '1',
@@ -34,7 +40,8 @@ export default {
 <style lang="scss">
 .header{
   height: 72px;
-  width: 1175px;
+  width: 100%;
+  max-width: 1175px;
   padding: 10px;
   margin: 0 auto;
   display: flex;

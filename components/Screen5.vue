@@ -1,42 +1,43 @@
 <template>
     <div class="screen">
-      <div class="top">
-        <div class="left">
+      <el-row :gutter="10">
+        <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
           <el-image
             :src="imgLink(linkImg)">
           </el-image>
-        </div>
-        <div class="right">
+        </el-col>
+        <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
           <h2>SeptyTest: R&D и ODM</h2>
           <p>
             R&D возможности Компании Chymes Laboratories позволяют в кратчайшие сроки разработать и внедрить в производство SeptyTest для любого дезинфицирующего средства по требованию Заказчика.
             По желанию Заказчика индикаторные наборы могут производиться
             на условиях ODM под торговой маркой и в брендированной упаковкой Заказчика.
           </p>
-        </div>
-      </div>
-      <div class="bottom">
-        <div class="left">
+        </el-col>
+      </el-row>
+      <el-row :gutter="10">
+        <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
           <h2>Техподдержка</h2>
-        </div>
-        <div class="right">
+        </el-col>
+        <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
           <p>
             Вы можете оставить заявку на разработку или производство SeptyTest, либо задать вопрос, связанный с применением продукции. Пожалуйста, заполните форму и отправьте свой вопрос.
           </p>
-        </div>
-        </div>
+        </el-col>
+      </el-row>
 
         <div class="form">
           <el-form ref="form"  :model="form" label-width="0">
-            <div class="left">
-
+            <el-row :gutter="10">
+              <el-col :xs="24" :sm="24" :md="12" :lg="6" :xl="6">
               <el-form-item>
                 <el-input
                   v-model="form.name"
                   placeholder="Ваше имя"
                 ></el-input>
               </el-form-item>
-
+              </el-col>
+              <el-col :xs="24" :sm="24" :md="12" :lg="6" :xl="6">
               <el-form-item
                 prop="email"
 
@@ -47,29 +48,30 @@
               >
                 <el-input v-model="form.email"  placeholder="Ваш Email"></el-input>
               </el-form-item>
-
+              </el-col>
+              <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
+                <el-form-item>
+                  <el-input
+                    v-model="form.text"
+                    inline="true"
+                    placeholder="Сообщение"
+                  ></el-input>
+                </el-form-item>
+              </el-col>
+              <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
               <div class="text">
                 Нажимая на кнопку «Отправить запрос», Вы даете согласие на обработку своих персональных данных
               </div>
-              </div>
+              </el-col>
 
-            <div class="right">
-            <el-form-item>
-              <el-input
-                v-model="form.text"
-                inline="true"
-                placeholder="Сообщение"
-              ></el-input>
-            </el-form-item>
-
-
-
+              <el-col :xs="24" :sm="24" :md="12" :lg="6" :xl="6">
             <el-form-item class="button">
 
               <el-button  @click="onSubmit">Отправить</el-button>
 
             </el-form-item>
-            </div>
+              </el-col>
+            </el-row>
           </el-form>
         </div>
       </div>
@@ -104,44 +106,5 @@ export default {
 
 <style lang="scss" scoped>
 
-.screen{
-  .left{
-    width: 50%;
-  }
-  .right{
-    width: 50%;
-  }
-  .top{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 70px;
-
-  }
-  .bottom, .el-form{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 70px;
-
-  }
-
-  .form{
-    .left {
-      .el-form-item{
-        width: 50%;
-        float: left;
-      }
-    }
-    .el-input{
-      padding: 5px;
-      width: 98%;
-    }
-    .button{
-      margin-left: 5px;
-    }
-  }
-
-}
 
 </style>

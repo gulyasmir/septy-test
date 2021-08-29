@@ -1,9 +1,12 @@
 <template>
   <div class="screen">
-    <div class="test-for">
+    <el-row :gutter="10">
+      <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
       <div class="img">
         <el-image :src="imgLink(linkImgFor)"></el-image>
       </div>
+      </el-col>
+      <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
       <div class="list">
         <h2>Именно SeptyTest:</h2>
           <el-card
@@ -26,7 +29,8 @@
 
           </el-card>
       </div>
-    </div>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
@@ -61,15 +65,7 @@ export default {
 .screen{
   padding-bottom: 134px;
 }
-  .test-for{
-    display: flex;
-    justify-content: space-between;
 
-
-
-    .list{
-      width: 50%;
-    }
 
     .item{
       display: flex;
@@ -120,5 +116,5 @@ export default {
           display: block;
         }
       }
-  }
+
 </style>
