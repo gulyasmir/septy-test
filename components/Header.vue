@@ -66,18 +66,18 @@ export default {
   .el-menu--horizontal>.el-menu-item.is-active {
     border-bottom:none;
     color: #252525;
-  ;
-  }
-.logo {
-  min-width: 170px;
-  height: 62px;
-  z-index: 10;
 
-  img{
-    height: 100%;
-    width: auto;
-    z-index: 10;
   }
-}
+  .logo {
+    min-width: 170px;
+    height: 62px;
+    z-index: 10;
+
+    img{
+      height: 100%;
+      width: auto;
+      z-index: 10;
+    }
+  }
 }
 </style>

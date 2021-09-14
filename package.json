@@ -1,0 +1,24 @@
+{
+  "name": "septy-test",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.13.6",
+    "element-ui": "^2.13.2",
+    "nuxt": "^2.14.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/pwa": "^3.3.5",
+    "fibers": "^5.0.0",
+    "pug": "^3.0.2",
+    "pug-plain-loader": "^1.1.0",
+    "sass": "^1.38.0",
+    "sass-loader": "^10.2.0"
+  }
+}

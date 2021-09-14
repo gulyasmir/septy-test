@@ -84,7 +84,12 @@ export default {
   }
 
 }
-
+.text{
+  max-width: 100%;
+  p{
+    text-wrap: normal;
+  }
+}
 .bg-blue{
   .el-card{
     background: var(--blue);
