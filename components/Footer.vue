@@ -1,6 +1,7 @@
 <template>
-  <div class="footer">
-    <el-row :gutter="10">
+    <div class="screen">
+      <div class="footer">
+         <el-row :gutter="10">
       <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
        <el-image
          :src="imgLink(linkImg)">
@@ -29,6 +30,7 @@
        </p>
      </el-col>
    </el-row>
+    </div>
   </div>
 </template>
 
@@ -52,7 +54,6 @@ name: "Footer",
 
 <style lang="scss" scoped>
 .footer{
-  width: 1175px;
   margin: 0 auto;
   padding: 74px 0;
 
