@@ -59,7 +59,7 @@ name: "Footer",
   .whatsapp{
     color: var(--green);
     padding:15px 15px 15px 40px;
-    background: url("../static/image/whatsapp.svg") no-repeat left center;
+    background: url("../static/image/whatsapp.png") no-repeat left center;
 
   }
   .contacts{

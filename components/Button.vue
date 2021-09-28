@@ -29,7 +29,7 @@ export default {
 .el-message-box__message {
   margin: 0;
   padding-top: 100px;
-  background: url("../static/image/email.svg") no-repeat top center;
+  background: url("../static/image/email.png") no-repeat top center;
   background-size: 81px;
   color:var(--text-color);
   font-weight: 700;

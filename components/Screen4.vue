@@ -10,6 +10,7 @@
         </el-col>
         <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
           <el-image
+            :fit="contain"
             :src="imgLink(linkImg)">
           </el-image>
         </el-col>
@@ -26,7 +27,8 @@
           :key="item.id">
             <div class="flex">
             <el-image
-              style="width: 39px; height: 39px"
+              style="width: 39px; height: auto"
+              :fit="contain"
               :src="imgLink(item.icon)">
             </el-image>
             <p> {{item.text}}</p>
@@ -45,16 +47,16 @@ export default {
     return {
       linkImg:'screen4-img.png',
       linkIcons:[
-        {id:1, icon:'home.svg', text:'Объекты коммунального хозяйства'},
-        {id:2, icon:'people.svg', text:'Организации социальной сферы и сферы обслуживания'},
-        {id:3, icon:'hospital.svg', text:'Медицинские учреждения любого профиля'},
-        {id:4, icon:'paw.svg', text:'Ветеринарные предприятия и клиники'},
-        {id:5, icon:'food.svg', text:'Предприятия общественного питания любого уровня'},
-        {id:6, icon:'bus.svg', text:'На объектах транспортной сферы и на подвижном составе'},
-        {id:7, icon:'baby-boy.svg', text:'Дошкольные и школьные учреждения'},
-        {id:8, icon:'products.svg', text:'Пищевые и промышленные предприятия'},
-        {id:9, icon:'shopping-cart.svg', text:'Торгово-развлекательные центры'},
-        {id:10, icon:'city.svg', text:'Другие общественные и офисные здания\n'},
+        {id:1, icon:'home.png', text:'Объекты коммунального хозяйства'},
+        {id:2, icon:'people.png', text:'Организации социальной сферы и сферы обслуживания'},
+        {id:3, icon:'hospital.png', text:'Медицинские учреждения любого профиля'},
+        {id:4, icon:'paw.png', text:'Ветеринарные предприятия и клиники'},
+        {id:5, icon:'food.png', text:'Предприятия общественного питания любого уровня'},
+        {id:6, icon:'bus.png', text:'На объектах транспортной сферы и на подвижном составе'},
+        {id:7, icon:'baby-boy.png', text:'Дошкольные и школьные учреждения'},
+        {id:8, icon:'products.png', text:'Пищевые и промышленные предприятия'},
+        {id:9, icon:'shopping-cart.png', text:'Торгово-развлекательные центры'},
+        {id:10, icon:'city.png', text:'Другие общественные и офисные здания'},
       ]
 
     }
@@ -82,7 +84,10 @@ export default {
     align-items: center;
 
     .el-image{
-      padding-right: 15px;
+      padding-right: 10px;
+      img{
+        height: auto;
+      }
     }
   }
   .flex-text{
