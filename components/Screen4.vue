@@ -28,7 +28,6 @@
             <div class="flex">
             <el-image
               style="width: 39px; height: auto"
-              :fit="contain"
               :src="imgLink(item.icon)">
             </el-image>
             <p> {{item.text}}</p>
