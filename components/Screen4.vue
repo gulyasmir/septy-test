@@ -10,7 +10,6 @@
         </el-col>
         <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
           <el-image
-            :fit="contain"
             :src="imgLink(linkImg)">
           </el-image>
         </el-col>

@@ -51,4 +51,32 @@ export default {
     }
   }
 }
+
+@media screen and (max-width: 1175px) {
+  .full-screen{
+    background: url("../static/image/mobile-banner.png") no-repeat;
+    background-size:100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+
+    .info{
+      width:100%;
+      max-width: 1175px;
+      margin: 0 auto;
+
+      h1{
+        color: var(--text-color-h1-screen1);
+        font-size: 36px;
+
+      }
+      h3{
+        width: 40%;
+        color: var(--text-color-h3-screen1);
+        font-size: 16px;
+      }
+    }
+  }
+}
 </style>

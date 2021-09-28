@@ -80,4 +80,9 @@ export default {
     }
   }
 }
+@media screen and (max-width: 1175px) {
+  .el-menu{
+    display: none;
+  }
+}
 </style>
