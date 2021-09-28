@@ -48,19 +48,24 @@ export default {
   /*
   ** Nuxt.js dev-modules
   */
+
   buildModules: [
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
   ],
   /*
   ** Nuxt.js modules
   */
   modules: [
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/pwa'
   ],
   axios: {
-    // proxy: true
+
   },
   pwa: {
+    icon:true
+  },
+  workbox:{
 
   },
   /*
