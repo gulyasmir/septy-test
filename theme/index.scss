@@ -11,7 +11,9 @@ body{
   line-height: 19px;
   background: var(--bg);
 }
-
+.clear{
+  clear: both;
+}
 h1{
   font-weight: 700;
   font-size: 64px;
@@ -57,5 +59,59 @@ li{
   .screen{
     width: 100%;
     padding: 20px 10px;
+    margin: 10px 0;
+  }
+}
+.el-message-box {
+  display: inline-block;
+  width: 577px;
+}
+.el-message-box__headerbtn{
+  background:  url("../static/image/cancel.png") no-repeat top center;
+  padding: 10px;
+  width: 5px;
+  i{
+    display: none;
+  }
+}
+
+
+.el-message-box__message {
+  margin: 0;
+  padding-top: 100px;
+  background: url("../static/image/email.png") no-repeat top center;
+  background-size: 81px;
+  color:var(--text-color);
+  font-weight: 700;
+  text-align: center;
+
+  p{
+    font-weight: 700;
+  }
+}
+.button{
+  .el-button{
+    width: 281px;
+    height: 55px;
+    background: var(--button-default);
+    color:var(--white);
+    border-radius:10px;
+    border:none;
+
+    :hover{
+      background: var(--button-hover);
+    }
+    :active{
+      background: var(--button-active);
+    }
+    .active{
+      background: var(--button-active);
+    }
+  }
+}
+@media screen and (max-width: 1175px) {
+  .el-message-box {
+
+    width: 80%;
   }
 }

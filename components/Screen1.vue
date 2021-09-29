@@ -6,9 +6,9 @@
        Инновационный индикаторный набор
        от компании Chymes Laboratories для экспресс-проверки качества растворов и концентратов дезинфицирующих средств.
      </h3>
-     <Button
-     :text="textScreen1"
-     />
+     <div class="button">
+       <el-button  @click="goToForm">{{textScreen1}}</el-button>
+     </div>
    </div>
  </div>
 </template>
@@ -22,7 +22,17 @@ export default {
   },
   data() {
     return {
-      textScreen1: 'Получить консультацию'
+      textScreen1: 'Получить консультацию',
+
+    }
+  },
+  methods: {
+    goToForm(){
+      const el = document.getElementById('form');
+      el.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
     }
   }
 }
@@ -59,12 +69,13 @@ export default {
     height: 100vh;
     display: flex;
     align-items: center;
-    padding: 15px;
+
 
     .info{
       width:100%;
       max-width: 1175px;
       margin: 0 auto;
+      padding: 15px;
 
       h1{
         color: var(--text-color-h1-screen1);
@@ -72,7 +83,7 @@ export default {
 
       }
       h3{
-        width: 40%;
+        width: 90%;
         color: var(--text-color-h3-screen1);
         font-size: 16px;
       }

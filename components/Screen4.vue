@@ -34,6 +34,7 @@
            </el-col>
         </el-row>
   </div>
+    <div class="clear"></div>
   </div>
 </template>
 
@@ -75,7 +76,6 @@ export default {
 }
 .screen{
 
-
   .flex{
     display: flex;
     justify-content: space-between;
@@ -100,5 +100,11 @@ export default {
     }
 
 }
+@media screen and (max-width: 1175px) {
 
+  .bg-white{
+    height: auto;
+    padding-bottom: 50px;
+  }
+}
 </style>

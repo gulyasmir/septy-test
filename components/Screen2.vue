@@ -1,36 +1,41 @@
 <template>
-  <div class="screen">
-    <h2>Вместе с SeptyTest Вы самостоятельно <br> за 2-3 минуты можете:</h2>
-    <el-row :gutter="10">
-      <el-col :xs="24" :sm="24" :md="12" :lg="6" :xl="6"
-        v-for="item in featuresList"
-        :key="item.id">
-        <template  v-if="item.icon">
-          <div class="features">
-            <el-card shadow="hover">
+  <div>
+    <div class="screen">
+      <h2>Вместе с SeptyTest Вы самостоятельно <br> за 2-3 минуты можете:</h2>
+      <el-row :gutter="10">
+        <el-col :xs="24" :sm="24" :md="12" :lg="6" :xl="6"
+                v-for="item in featuresList"
+                :key="item.id">
+          <template  v-if="item.icon">
+            <div class="features">
+              <el-card shadow="hover">
                 <el-image
                   style="width: 39px; height: 39px"
                   :src="imgLink(item.icon)">
                 </el-image>
-              <div class="text">
-                {{item.text}}
-              </div>
-            </el-card>
-          </div>
-        </template >
-        <template  v-else>
-          <div class="features bg-blue">
-            <el-card shadow="hover">
-              <p>Точность</p>
-              <div class="text">
-                {{item.text}}
-              </div>
-            </el-card>
-          </div>
-        </template >
-      </el-col>
-    </el-row>
+                <div class="text">
+                  {{item.text}}
+                </div>
+              </el-card>
+            </div>
+          </template >
+          <template  v-else>
+            <div class="features bg-blue">
+              <el-card shadow="hover">
+                <p>Точность</p>
+                <div class="text">
+                  {{item.text}}
+                </div>
+              </el-card>
+            </div>
+          </template >
+        </el-col>
+      </el-row>
+
+    </div>
+    <div class="clear"></div>
   </div>
+
 </template>
 
 <script>
@@ -105,5 +110,45 @@ export default {
     box-shadow:1px 15px 15px 10px rgba(38, 94, 215, 0.2);
   }
 }
+@media screen and (max-width: 1175px) {
+  .features{
+    padding: 8px 2px;
+    height: auto;
+    .el-card{
+      height:auto;
+      background: var(--white);
+      border-radius: 20px;
+      border: none;
+      p{
+        text-transform: uppercase;
+      }
+    }
+    .el-card__body{
+      padding: 20px;
+    }
 
+    .el-image{
+      padding-bottom: 32px;
+      float: left;
+      padding-right: 16px;
+
+      img{
+        color: #265ED7;
+        width: 39px;
+        height: 39px;
+      }
+    }
+
+  }
+  .bg-blue{
+    .el-card{
+      background: var(--blue);
+      color: var(--white);
+
+    }
+    :hover{
+      box-shadow:1px 15px 15px 10px rgba(38, 94, 215, 0.2);
+    }
+  }
+}
 </style>
