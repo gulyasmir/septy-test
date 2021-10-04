@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white">
+  <div id="screen4" class="bg-white">
     <div class="screen">
       <el-row :gutter="10">
         <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
@@ -105,6 +105,11 @@ export default {
   .bg-white{
     height: auto;
     padding-bottom: 50px;
+  }
+  .screen .flex {
+    display: flex;
+    justify-content: left;
+    align-items: center;
   }
 }
 </style>

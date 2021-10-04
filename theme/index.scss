@@ -56,6 +56,10 @@ li{
   padding: 54px 0;
 }
 @media screen and (max-width: 1175px) {
+  body{
+    background: var(--white);
+  }
+
   .screen{
     width: 100%;
     padding: 20px 10px;
@@ -70,11 +74,11 @@ li{
   background:  url("../static/image/cancel.png") no-repeat top center;
   padding: 10px;
   width: 5px;
-  i{
-    display: none;
-  }
 }
 
+.el-message-box__headerbtn i{
+  display: none;
+}
 
 .el-message-box__message {
   margin: 0;
@@ -84,31 +88,29 @@ li{
   color:var(--text-color);
   font-weight: 700;
   text-align: center;
-
-  p{
-    font-weight: 700;
-  }
 }
-.button{
-  .el-button{
+.el-message-box__message  p{
+  font-weight: 700;
+}
+
+  .button .el-button {
     width: 281px;
     height: 55px;
     background: var(--button-default);
-    color:var(--white);
-    border-radius:10px;
-    border:none;
-
-    :hover{
+    color: var(--white);
+    border-radius: 10px;
+    border: none;
+  }
+    .el-button.el-button--default:hover{
       background: var(--button-hover);
     }
-    :active{
+  .el-button.el-button--default:active{
       background: var(--button-active);
     }
-    .active{
+  .el-button.el-button--default.active{
       background: var(--button-active);
     }
-  }
-}
+
 @media screen and (max-width: 1175px) {
   .el-message-box {
 

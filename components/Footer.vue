@@ -1,5 +1,5 @@
 <template>
-    <div class="screen">
+    <div id="screen7" class="screen">
       <div class="footer">
          <el-row :gutter="10">
       <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
@@ -13,18 +13,18 @@
         <p>
           Россия, Екатеринбург, Чапаева, 72
         </p>
-       <a class="whatsapp" href="#">
+       <a class="whatsapp" href="https://wa.me/+79258600106" target="_blank">
          Написать нам в WhatsApp
        </a>
      </el-col>
       <el-col :xs="24" :sm="24" :md="6" :lg="6" :xl="6">
        <p>
-       <a href="#">
+       <a href="mailto:info@chymes.ru" target="_blank">
          info@chymes.ru
        </a>
        </p>
        <p>
-         <a href="#">
+         <a href="https://www.chymes.ru" target="_blank">
          www.chymes.ru
        </a>
        </p>

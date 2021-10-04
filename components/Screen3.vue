@@ -1,5 +1,5 @@
 <template>
-  <div class="screen">
+  <div  id="screen3" class="screen">
     <el-row :gutter="10">
       <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
       <div class="img">

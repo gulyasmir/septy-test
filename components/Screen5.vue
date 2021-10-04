@@ -1,5 +1,6 @@
 <template>
-    <div class="screen">
+  <div>
+    <div  id="screen5" class="screen">
       <el-row :gutter="10">
         <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
           <el-image
@@ -15,6 +16,9 @@
           </p>
         </el-col>
       </el-row>
+
+    </div>
+    <div id="screen6" class="screen">
       <el-row :gutter="10">
         <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
           <h2>Техподдержка</h2>
@@ -70,7 +74,7 @@
           </el-form>
         </div>
       </div>
-
+  </div>
 </template>
 
 <script>

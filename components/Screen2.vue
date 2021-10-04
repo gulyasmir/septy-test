@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div  id="screen2">
     <div class="screen">
       <h2>Вместе с SeptyTest Вы самостоятельно <br> за 2-3 минуты можете:</h2>
       <el-row :gutter="10">
@@ -93,6 +93,9 @@ export default {
     }
   }
 
+}
+.features:hover{
+  padding: 8px 0;
 }
 .text{
   max-width: 100%;

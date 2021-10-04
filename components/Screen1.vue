@@ -1,5 +1,5 @@
 <template>
- <div class="full-screen">
+ <div id="screen1" class="full-screen">
    <div class="info">
      <h1>SeptyTest</h1>
      <h3>
@@ -30,8 +30,7 @@ export default {
     goToForm(){
       const el = document.getElementById('form');
       el.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
+        behavior: 'smooth'
       });
     }
   }
