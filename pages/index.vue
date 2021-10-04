@@ -1,30 +1,15 @@
 <template>
   <div class="page">
-    <Screen1/>
-    <div class="container">
-      <Screen2/>
-      <Screen3/>
-      <Screen4/>
-      <Screen5/>
-    </div>
+    <General/>
   </div>
-
 </template>
 
 <script>
-import Screen1 from '@/components/Screen1'
-import Screen2 from '@/components/Screen2'
-import Screen3 from '@/components/Screen3'
-import Screen4 from '@/components/Screen4'
-import Screen5 from '@/components/Screen5'
+import General from '@/components/General'
 
 export default {
   components:{
-    Screen1,
-    Screen2,
-    Screen3,
-    Screen4,
-    Screen5
+    General
   }
 }
 </script>
