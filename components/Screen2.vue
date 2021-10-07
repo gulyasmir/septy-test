@@ -4,7 +4,7 @@
       <h2>Вместе с SeptyTest Вы самостоятельно <br> за 2-3 минуты можете:</h2>
       <el-row :gutter="10">
         <el-col :xs="24" :sm="24" :md="12" :lg="6" :xl="6"
-                v-for="item in featuresList"
+                v-for="item in featuresList1"
                 :key="item.id">
           <template  v-if="item.icon">
             <div class="features">
@@ -42,9 +42,15 @@
 import imageLink from '@/plugins/imageLink'
 export default {
   name: "Screen2",
+  props:{
+    featuresList:{
+      type:Object,
+      default:{}
+    }
+  },
   data(){
     return{
-      featuresList:[
+      featuresList1:[
         {id:1, icon:'icon1.png', text:'Проверить качество дезинфицирующего средства при закупке и приемке на склад'},
         {id:2, icon:'icon2.png', text:'Подтвердить концентрацию раствора дезинфицирующего средства'},
         {id:3, icon:'icon3.png', text:'Избежать ошибок в процессе приготовления раствора ДС'},

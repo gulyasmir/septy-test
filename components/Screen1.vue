@@ -1,10 +1,9 @@
 <template>
  <div id="screen1" class="full-screen">
    <div class="info">
-     <h1>SeptyTest</h1>
+     <h1>{{this.screen.title}}</h1>
      <h3>
-       Инновационный индикаторный набор
-       от компании Chymes Laboratories для экспресс-проверки качества растворов и концентратов дезинфицирующих средств.
+       {{this.screen.text}}
      </h3>
      <div class="button">
        <el-button  @click="goToForm">{{textScreen1}}</el-button>
@@ -20,10 +19,15 @@ export default {
   components:{
     Button
   },
+  props:{
+    screen:{
+      type:Object,
+      default:{}
+    }
+  },
   data() {
     return {
-      textScreen1: 'Получить консультацию',
-
+      textScreen1: 'Получить консультацию'
     }
   },
   methods: {
