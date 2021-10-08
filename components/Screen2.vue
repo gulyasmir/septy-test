@@ -4,14 +4,14 @@
       <h2>Вместе с SeptyTest Вы самостоятельно <br> за 2-3 минуты можете:</h2>
       <el-row :gutter="10">
         <el-col :xs="24" :sm="24" :md="12" :lg="6" :xl="6"
-                v-for="item in featuresList1"
-                :key="item.id">
-          <template  v-if="item.icon">
+                v-for="item in featuresList"
+        >
+          <template  v-if="item.id<8">
             <div class="features">
               <el-card shadow="hover">
                 <el-image
                   style="width: 39px; height: 39px"
-                  :src="imgLink(item.icon)">
+                  :src="imgLink('icon'+item.id+'.png')">
                 </el-image>
                 <div class="text">
                   {{item.text}}
@@ -44,8 +44,8 @@ export default {
   name: "Screen2",
   props:{
     featuresList:{
-      type:Object,
-      default:{}
+      type:Array,
+      default:[]
     }
   },
   data(){

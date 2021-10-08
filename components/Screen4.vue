@@ -26,8 +26,9 @@
           :key="item.id">
             <div class="flex">
             <el-image
+              v-if="item.img"
               style="width: 39px; height: auto"
-              :src="imgLink(item.icon)">
+              :src="imgLink(item.img)">
             </el-image>
             <p> {{item.text}}</p>
             </div>
@@ -42,10 +43,16 @@
 import imageLink from '@/plugins/imageLink'
 export default {
   name: "Screen4",
+  props:{
+    linkIcons:{
+      type:Array,
+      default:[]
+    }
+  },
   data() {
     return {
       linkImg:'screen4-img.png',
-      linkIcons:[
+      linkIcons1:[
         {id:1, icon:'home.png', text:'Объекты коммунального хозяйства'},
         {id:2, icon:'people.png', text:'Организации социальной сферы и сферы обслуживания'},
         {id:3, icon:'hospital.png', text:'Медицинские учреждения любого профиля'},
@@ -62,6 +69,7 @@ export default {
   },
   methods:{
     imgLink(iconName){
+      console.log('iconName', iconName)
       return imageLink(iconName)
     }
   }

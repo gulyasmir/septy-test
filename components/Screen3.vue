@@ -14,19 +14,16 @@
             v-for="item in listFor"
             :key="item.id"
             shadow="hover">
-
               <div class="number">
                 #{{item.id}}
               </div>
               <div class="text">
-                {{item.text}}
+                {{item.title}}
 
                 <div class="hide-text">
-                  {{item.hideText}}
+                  {{item.text}}
                 </div>
               </div>
-
-
           </el-card>
       </div>
       </el-col>
@@ -38,10 +35,16 @@
 import imageLink from '@/plugins/imageLink'
 export default {
   name: "Screen3",
+  props:{
+    listFor:{
+      type:Array,
+      default:[]
+    }
+  },
   data() {
     return {
       linkImgFor:'imagefor.png',
-      listFor:[
+      listFor1:[
         {id:1, text:'Для любых видов дезинфицирующих средств', hideText:'Продукция маркируется индивидуально под ваши требования, в зависимости от внедренной на вашем предприятии системы автоматического учета товара'},
         {id:2, text:'Производится под ваш заказ в любых количествах', hideText:'Продукция маркируется индивидуально под ваши требования, в зависимости от внедренной на вашем предприятии системы автоматического учета товара'},
         {id:3, text:'Поставляется на удобных коммерческих условиях', hideText:'Продукция маркируется индивидуально под ваши требования, в зависимости от внедренной на вашем предприятии системы автоматического учета товара'},

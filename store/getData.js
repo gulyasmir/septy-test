@@ -53,7 +53,7 @@ export const actions = {
   },
   async getList4Data(){
     try {
-      const url=`https://septy-test-api.herokuapp.com/api/list-screen3`
+      const url=`https://septy-test-api.herokuapp.com/api/list-screen4`
 
       let resultdata = await this.$axios.get(url)
 

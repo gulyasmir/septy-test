@@ -7,8 +7,12 @@
     <Screen2
     :featuresList="this.list2Data"
     />
-    <Screen3/>
-    <Screen4/>
+    <Screen3
+      :listFor="this.list3Data"
+    />
+    <Screen4
+      :linkIcons="this.list4Data"
+    />
     <Screen5/>
   </div>
 </div>
@@ -33,9 +37,9 @@ export default {
     return{
       screenData: {},
       contactData:{},
-      list2Data:{},
-      list3Data:{},
-      list4Data:{}
+      list2Data:[],
+      list3Data:[],
+      list4Data:[]
     }
   },
   beforeMount() {
@@ -59,16 +63,16 @@ export default {
     },
     async getList2Data() {
       let dataset = await this.$store.dispatch('getData/getList2Data')
-      this.list2Data = this.returnData(dataset)
+      this.list2Data = dataset.data
     },
     async getList3Data() {
       let dataset = await this.$store.dispatch('getData/getList3Data')
-      this.list3Data = this.returnData(dataset)
+      this.list3Data = dataset.data
       return this.list3Data
     },
     async getList4Data() {
       let dataset = await this.$store.dispatch('getData/getList4Data')
-      this.list4Data = this.returnData(dataset)
+      this.list4Data = dataset.data
       return this.list4Data
     }
   }
