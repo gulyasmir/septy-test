@@ -1,7 +1,7 @@
 <template>
 <div>
   <Screen1
-  :screen="this.screenData"
+  :screen="this.screenData[0]"
   />
   <div class="container">
     <Screen2
@@ -13,7 +13,9 @@
     <Screen4
       :linkIcons="this.list4Data"
     />
-    <Screen5/>
+    <Screen5
+      :screen="this.screenData[5]"
+    />
   </div>
 </div>
 </template>
@@ -35,7 +37,7 @@ export default {
   },
   data(){
     return{
-      screenData: {},
+      screenData:[],
       contactData:{},
       list2Data:[],
       list3Data:[],
@@ -50,12 +52,12 @@ export default {
     this.getList4Data()
   },
   methods: {
-    returnData(dataset) {
+    returnData1(dataset) {
       return dataset ? dataset.data[0] : {}
     },
     async getScreenData() {
       let dataset = await this.$store.dispatch('getData/getScreenData')
-      this.screenData = this.returnData(dataset)
+      this.screenData = dataset.data
     },
     async getContactData() {
       let dataset = await this.$store.dispatch('getData/getContactData')
