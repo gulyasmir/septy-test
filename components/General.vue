@@ -14,7 +14,8 @@
       :linkIcons="this.list4Data"
     />
     <Screen5
-      :screen="this.screenData[5]"
+      :screen5="this.screenData[4]"
+      :screen6="this.screenData[5]"
     />
   </div>
 </div>
@@ -38,7 +39,6 @@ export default {
   data(){
     return{
       screenData:[],
-      contactData:{},
       list2Data:[],
       list3Data:[],
       list4Data:[]
@@ -46,35 +46,24 @@ export default {
   },
   beforeMount() {
     this.getScreenData()
-    this.getContactData()
     this.getList2Data()
     this.getList3Data()
     this.getList4Data()
   },
   methods: {
-    returnData1(dataset) {
-      return dataset ? dataset.data[0] : {}
-    },
     async getScreenData() {
-      let dataset = await this.$store.dispatch('getData/getScreenData')
-      this.screenData = dataset.data
-    },
-    async getContactData() {
-      let dataset = await this.$store.dispatch('getData/getContactData')
-      this.contactData = this.returnData(dataset)
+      this.screenData =  await this.$store.dispatch('getData/getScreenData')
+
     },
     async getList2Data() {
-      let dataset = await this.$store.dispatch('getData/getList2Data')
-      this.list2Data = dataset.data
+      this.list2Data = await this.$store.dispatch('getData/getList2Data')
     },
     async getList3Data() {
-      let dataset = await this.$store.dispatch('getData/getList3Data')
-      this.list3Data = dataset.data
+      this.list3Data = await this.$store.dispatch('getData/getList3Data')
       return this.list3Data
     },
     async getList4Data() {
-      let dataset = await this.$store.dispatch('getData/getList4Data')
-      this.list4Data = dataset.data
+      this.list4Data = await this.$store.dispatch('getData/getList4Data')
       return this.list4Data
     }
   }

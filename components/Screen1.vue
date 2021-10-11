@@ -22,12 +22,13 @@ export default {
   props:{
     screen:{
       type:Object,
-      default:{}
+      default:{'title':'', 'text':''}
     }
   },
   data() {
     return {
-      textScreen1: 'Получить консультацию'
+      textScreen1: 'Получить консультацию',
+      screen1:this.screen[0]
     }
   },
   methods: {

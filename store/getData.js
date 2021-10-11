@@ -6,7 +6,7 @@ export const actions = {
       let resultdata = await this.$axios.get(url)
 
       console.log('screen result', resultdata)
-      return resultdata
+      return resultdata.data
     } catch(e){
       console.log('getClients store error')
       throw  e
@@ -19,7 +19,7 @@ export const actions = {
       let resultdata = await this.$axios.get(url)
 
       console.log('contacts result', resultdata)
-      return resultdata
+      return resultdata.data
     } catch(e){
       console.log('getClients store error')
       throw  e
@@ -32,7 +32,7 @@ export const actions = {
       let resultdata = await this.$axios.get(url)
 
       console.log('list-screen2 result', resultdata)
-      return resultdata
+      return resultdata.data
     } catch(e){
       console.log('getClients store error')
       throw  e
@@ -45,7 +45,7 @@ export const actions = {
       let resultdata = await this.$axios.get(url)
 
       console.log('list-screen3 result', resultdata)
-      return resultdata
+      return resultdata.data
     } catch(e){
       console.log('getClients store error')
       throw  e
@@ -58,7 +58,7 @@ export const actions = {
       let resultdata = await this.$axios.get(url)
 
       console.log('list-screen4 result', resultdata)
-      return resultdata
+      return resultdata.data
     } catch(e){
       console.log('getClients store error')
       throw  e
