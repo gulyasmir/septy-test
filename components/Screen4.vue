@@ -77,9 +77,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.el-row{
+  padding: 50px 0;
+}
 .bg-white{
   background: var(--white);
-  height: 100vh;
   width: 100%;
 }
 .screen{
@@ -109,7 +111,9 @@ export default {
 
 }
 @media screen and (max-width: 1175px) {
-
+  .el-row{
+    padding: 10px 0;
+  }
   .bg-white{
     height: auto;
     padding-bottom: 50px;
