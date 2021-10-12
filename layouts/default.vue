@@ -19,7 +19,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .el-main{
   margin-top: -60px;
   z-index: 1;

@@ -5,6 +5,7 @@
       <el-row :gutter="10">
         <el-col :xs="24" :sm="24" :md="12" :lg="6" :xl="6"
                 v-for="item in featuresList"
+                :key="item.id"
         >
           <template  v-if="item.id<8">
             <div class="features">
