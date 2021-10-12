@@ -138,6 +138,7 @@ export default {
   .header {
     background: var(--white);
     z-index: 99;
+
     .el-menu-demo {
       display: none;
     }
@@ -145,8 +146,9 @@ export default {
     .mobile-menu {
       display: block;
 
-
-
+      .list-menu ul {
+        padding-top: 100px;
+      }
     }
   }
 }

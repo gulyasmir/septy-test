@@ -11,6 +11,7 @@
      </el-col>
       <el-col :xs="24" :sm="24" :md="6" :lg="6" :xl="6">
         <p>
+          {{this.contactData.address}}
           Россия, Екатеринбург, Чапаева, 72
         </p>
        <a class="whatsapp" href="https://wa.me/+79258600106" target="_blank">
@@ -20,11 +21,13 @@
       <el-col :xs="24" :sm="24" :md="6" :lg="6" :xl="6">
        <p>
        <a href="mailto:info@chymes.ru" target="_blank">
+         {{this.contactData.email}}
          info@chymes.ru
        </a>
        </p>
        <p>
          <a href="https://www.chymes.ru" target="_blank">
+           {{this.contactData.site}}
          www.chymes.ru
        </a>
        </p>
@@ -42,11 +45,18 @@ name: "Footer",
   data() {
     return {
       linkImg:'logo-footer.png',
+      contactData:{},
     }
+  },
+  beforeMount() {
+    this.getContactData()
   },
   methods: {
     imgLink(iconName) {
       return imageLink(iconName)
+    },
+    async getContactData() {
+      this.contactData = await this.$store.dispatch('getData/getContactData')
     },
   }
 }

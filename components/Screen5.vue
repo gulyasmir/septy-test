@@ -8,12 +8,14 @@
           </el-image>
         </el-col>
         <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
-          <h2>SeptyTest: R&D и ODM</h2>
+          <h2>{{this.screen5.title}}</h2>
+          <p>{{this.screen5.text}}</p>
+         <!-- <h2>SeptyTest: R&D и ODM</h2>
           <p>
             R&D возможности Компании Chymes Laboratories позволяют в кратчайшие сроки разработать и внедрить в производство SeptyTest для любого дезинфицирующего средства по требованию Заказчика.
             По желанию Заказчика индикаторные наборы могут производиться
             на условиях ODM под торговой маркой и в брендированной упаковкой Заказчика.
-          </p>
+          </p>-->
         </el-col>
       </el-row>
 
@@ -21,12 +23,10 @@
     <div id="screen6" class="screen">
       <el-row :gutter="10">
         <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
-          <h2>Техподдержка</h2>
+          <h2>{{this.screen6.title}}</h2>
         </el-col>
         <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
-          <p>
-            Вы можете оставить заявку на разработку или производство SeptyTest, либо задать вопрос, связанный с применением продукции. Пожалуйста, заполните форму и отправьте свой вопрос.
-          </p>
+          <p>{{this.screen6.text}}</p>
         </el-col>
       </el-row>
 
@@ -81,6 +81,16 @@
 import imageLink from '@/plugins/imageLink'
 export default {
   name: "Screen5",
+  props:{
+    screen5:{
+      type:Object,
+      default:{}
+    },
+    screen6:{
+      type:Object,
+      default:{}
+    }
+  },
   data() {
     return {
       linkImg:'screen5-img.png',
