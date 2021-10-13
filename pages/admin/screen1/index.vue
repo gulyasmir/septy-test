@@ -61,7 +61,8 @@ export default {
       screenData:[],
       form: {
         title: '',
-        text: ''
+        text: '',
+        img:'banner.png'
       }
     }
   },
@@ -69,8 +70,23 @@ export default {
     this.getScreenData()
   },
   methods: {
-    onSubmit() {
-      console.log('submit!');
+    async onSubmit() {
+      console.log('submit!')
+      let formData = {
+        title: this.form.title,
+        text: this.form.text,
+        img: this.form.img,
+        id:1
+      }
+      console.log('formData', formData)
+      let  result =  await this.$store.dispatch('updateData/updateScreenData', formData)
+      if (result.error=== true){
+        this.$message.warning('Упс!!! Что-то пошло не так.')
+      }
+      else {
+        this.$message.success('Успешно сохранено!')
+      }
+      this.$router.push('/admin')
     },
     async getScreenData() {
       this.screenData = await this.$store.dispatch('getData/getScreenData')

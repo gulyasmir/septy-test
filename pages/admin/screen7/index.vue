@@ -63,8 +63,24 @@ export default {
     this.getContactData()
   },
   methods: {
-    onSubmit() {
-      console.log('submit!');
+    async onSubmit() {
+      console.log('submit!')
+      let formData = {
+        address: this.form.address,
+        email: this.form.email,
+        site: this.form.site,
+        whatsapp:this.form.whatsapp,
+        id:1
+      }
+      console.log('formData', formData)
+        let  result =  await this.$store.dispatch('updateData/updateContact', formData)
+        if (result.error=== true){
+          this.$message.warning('Упс!!! Что-то пошло не так.')
+        }
+        else {
+          this.$message.success('Успешно сохранено!')
+        }
+        this.$router.push('/admin')
     },
     async getContactData() {
       this.contactData = await this.$store.dispatch('getData/getContactData')

@@ -98,8 +98,58 @@ export default {
         {id:8, icon:'icon8.png', text:this.form.item8}
       ]
     },
-    onSubmit() {
-      console.log('submit!');
+    async onSubmit() {
+      let formData = {
+        title: this.form.title,
+        id:2
+      }
+      console.log('formData', formData)
+      let  result =  await this.$store.dispatch('updateData/updateScreenData', formData)
+      for (let i=1;i<8;i++){
+        let titleItem
+        switch (i){
+          case 1:
+            titleItem = this.form.item1
+            break
+          case 2:
+            titleItem = this.form.item2
+            break
+          case 3:
+            titleItem = this.form.item3
+            break
+          case 4:
+            titleItem = this.form.item4
+            break
+          case 5:
+            titleItem = this.form.item5
+            break
+          case 6:
+            titleItem = this.form.item6
+            break
+          case 7:
+            titleItem = this.form.item7
+            break
+          case 8:
+            titleItem = this.form.item8
+            break
+        }
+
+        let listData = {
+          text: titleItem,
+          id:i
+        }
+        console.log('listData', listData)
+        let  resultList =  await this.$store.dispatch('updateData/updateList2Data', listData)
+      }
+
+
+      if (result.error=== true){
+        this.$message.warning('Упс!!! Что-то пошло не так.')
+      }
+      else {
+        this.$message.success('Успешно сохранено!')
+      }
+      this.$router.push('/admin')
     },
     async getScreenData() {
       this.screenData = await this.$store.dispatch('getData/getScreenData')
