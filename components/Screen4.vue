@@ -3,10 +3,8 @@
     <div class="screen">
       <el-row :gutter="10">
         <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
-          <h2>Кому подходит</h2>
-          <p>
-            SeptyTest позволяет избежать технических ошибок при работе с дезинфицирующими средствами в любых областях использования дезинфицирующих средств. Благодаря простоте применения и тщательно выверенной методике, SeptyTest может одинаково эффективно использоваться как обученными специалистами, так и персоналом без специальных навыков.
-          </p>
+          <h2>{{this.screen.title}}</h2>
+          <p>{{this.screen.text}}</p>
         </el-col>
         <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
           <el-image
@@ -26,9 +24,8 @@
           :key="item.id">
             <div class="flex">
             <el-image
-              v-if="item.img"
               style="width: 39px; height: auto"
-              :src="imgLink(item.img)">
+              :src="imgLink('screen4-icon'+item.id+'.png')">
             </el-image>
             <p> {{item.text}}</p>
             </div>
@@ -44,6 +41,10 @@ import imageLink from '@/plugins/imageLink'
 export default {
   name: "Screen4",
   props:{
+    screen:{
+      type:Object,
+      default:{'title':'', 'text':''}
+    },
     linkIcons:{
       type:Array,
       default:[]
@@ -53,16 +54,16 @@ export default {
     return {
       linkImg:'screen4-img.png',
       linkIcons1:[
-        {id:1, icon:'home.png', text:'Объекты коммунального хозяйства'},
-        {id:2, icon:'people.png', text:'Организации социальной сферы и сферы обслуживания'},
-        {id:3, icon:'hospital.png', text:'Медицинские учреждения любого профиля'},
-        {id:4, icon:'paw.png', text:'Ветеринарные предприятия и клиники'},
-        {id:5, icon:'food.png', text:'Предприятия общественного питания любого уровня'},
-        {id:6, icon:'bus.png', text:'На объектах транспортной сферы и на подвижном составе'},
-        {id:7, icon:'baby-boy.png', text:'Дошкольные и школьные учреждения'},
-        {id:8, icon:'products.png', text:'Пищевые и промышленные предприятия'},
-        {id:9, icon:'shopping-cart.png', text:'Торгово-развлекательные центры'},
-        {id:10, icon:'city.png', text:'Другие общественные и офисные здания'},
+        {id:1, icon:'screen4-icon1.png', text:'Объекты коммунального хозяйства'},
+        {id:2, icon:'screen4-icon2.png', text:'Организации социальной сферы и сферы обслуживания'},
+        {id:3, icon:'screen4-icon3.png', text:'Медицинские учреждения любого профиля'},
+        {id:4, icon:'screen4-icon4.png', text:'Ветеринарные предприятия и клиники'},
+        {id:5, icon:'screen4-icon5.png', text:'Предприятия общественного питания любого уровня'},
+        {id:6, icon:'screen4-icon6.png', text:'На объектах транспортной сферы и на подвижном составе'},
+        {id:7, icon:'screen4-icon7.png', text:'Дошкольные и школьные учреждения'},
+        {id:8, icon:'screen4-icon8.png', text:'Пищевые и промышленные предприятия'},
+        {id:9, icon:'screen4-icon9.png', text:'Торгово-развлекательные центры'},
+        {id:10, icon:'screen4-icon10.png', text:'Другие общественные и офисные здания'},
       ]
 
     }

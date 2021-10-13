@@ -4,18 +4,34 @@
       <el-col :span="12">
         <el-breadcrumb separator="/">
           <el-breadcrumb-item :to="{ path: '/admin' }">Назад</el-breadcrumb-item>
-          <el-breadcrumb-item>Экран 2</el-breadcrumb-item>
+          <el-breadcrumb-item>Экран 4</el-breadcrumb-item>
         </el-breadcrumb>
       </el-col>
     </el-row>
-    <h2>Экран 2</h2>
+    <h2>Экран 4</h2>
     <el-row>
       <el-col :span="12">
         <el-form ref="form" :model="form" label-width="120px">
           <el-form-item label="Заголовок">
             <el-input v-model="form.title"></el-input>
           </el-form-item>
-
+          <el-form-item label="Текст">
+            <el-input v-model="form.text"></el-input>
+          </el-form-item>
+          <el-form-item label="Изображение">
+            <el-upload
+              class="upload-demo"
+              drag
+              action="https://jsonplaceholder.typicode.com/posts/"
+              :on-preview="handlePreview"
+              :on-remove="handleRemove"
+              :file-list="fileList"
+              multiple>
+              <i class="el-icon-upload"></i>
+              <div class="el-upload__text">Drop file here or <em>click to upload</em></div>
+              <div class="el-upload__tip" slot="tip">jpg/png files with a size less than 500kb</div>
+            </el-upload>
+          </el-form-item>
           <el-form-item label="Список">
             <el-input v-model="form.item1"></el-input>
             <el-input v-model="form.item2"></el-input>
@@ -26,6 +42,7 @@
             <el-input v-model="form.item7"></el-input>
             <el-input v-model="form.item8"></el-input>
           </el-form-item>
+
           <el-form-item>
             <el-button type="primary" @click="onSubmit">Редактировать</el-button>
             <el-button>Отмена</el-button>
@@ -33,17 +50,17 @@
         </el-form>
       </el-col>
       <el-col :span="12">
-        <Screen2
-          :screen="{'title':this.form.title, 'text':''}"
-          :featuresList="[
-            {id:1, icon:'icon1.png', text:this.form.item1},
-            {id:2, icon:'icon2.png', text:this.form.item2},
-            {id:3, icon:'icon3.png', text:this.form.item3},
-            {id:4, icon:'icon4.png', text:this.form.item4},
-            {id:5, icon:'icon5.png', text:this.form.item5},
-            {id:6, icon:'icon6.png', text:this.form.item6},
-            {id:7, icon:'icon7.png', text:this.form.item7},
-            {id:8, icon:'icon8.png', text:this.form.item8}
+        <Screen4
+          :screen="{'title':this.form.title, 'text':this.form.text}"
+          :linkIcons="[
+            {id:1, text:this.form.item1},
+            {id:2, text:this.form.item2},
+            {id:3,  text:this.form.item3},
+            {id:4,  text:this.form.item4},
+            {id:5, text:this.form.item5},
+            {id:6,  text:this.form.item6},
+            {id:7,  text:this.form.item7},
+            {id:8,  text:this.form.item8}
         ]"
         />
       </el-col>
@@ -63,9 +80,10 @@ export default {
   data(){
     return{
       screenData:[],
-      list2Data:[],
+      list4Data:[],
       form: {
         title: '',
+        text:'',
         item1: '',
         item2: '',
         item3: '',
@@ -79,61 +97,52 @@ export default {
   },
   beforeMount() {
     this.getScreenData()
-    this.getList2Data()
+    this.getList4Data()
 
   },
   mounted() {
 
   },
   methods: {
-    makeList(){
-      this.list=[
-        {id:1, icon:'icon1.png', text:this.form.item1},
-        {id:2, icon:'icon2.png', text:this.form.item2},
-        {id:3, icon:'icon3.png', text:this.form.item3},
-        {id:4, icon:'icon4.png', text:this.form.item4},
-        {id:5, icon:'icon5.png', text:this.form.item5},
-        {id:6, icon:'icon6.png', text:this.form.item6},
-        {id:7, icon:'icon7.png', text:this.form.item7},
-        {id:8, icon:'icon8.png', text:this.form.item8}
-      ]
-    },
+
     onSubmit() {
       console.log('submit!');
     },
     async getScreenData() {
       this.screenData = await this.$store.dispatch('getData/getScreenData')
     },
-    async getList2Data() {
-      this.list2Data = await this.$store.dispatch('getData/getList2Data')
+    async getList4Data() {
+      this.list4Data = await this.$store.dispatch('getData/getList4Data')
     },
   },
   watch:{
-    list2Data(){
-      this.form.item1 = this.list2Data[0].text
-      this.form.item2 = this.list2Data[1].text
-      this.form.item3 = this.list2Data[2].text
-      this.form.item4 = this.list2Data[3].text
-      this.form.item5 = this.list2Data[4].text
-      this.form.item6 = this.list2Data[5].text
-      this.form.item7 = this.list2Data[6].text
-      this.form.item8 = this.list2Data[7].text
+    list4Data(){
+      this.form.item1 = this.list4Data[0].text
+      this.form.item2 = this.list4Data[1].text
+      this.form.item3 = this.list4Data[2].text
+      this.form.item4 = this.list4Data[3].text
+      this.form.item5 = this.list4Data[4].text
+      this.form.item6 = this.list4Data[5].text
+      this.form.item7 = this.list4Data[6].text
+      this.form.item8 = this.list4Data[7].text
     },
     screenData(){
-      this.form.title = this.screenData[1].title
+      this.form.title = this.screenData[3].title
+      this.form.text = this.screenData[3].text
     }
 
   }
 }
 </script>
 
-<style scoped>
+<style >
 .el-col{
   padding: 20px;
 }
-.full-screen{
+
+.screen{
   padding: 20px;
-  background-size:cover;
+
   height: 400px;
   width: auto;
 }

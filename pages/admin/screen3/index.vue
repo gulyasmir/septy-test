@@ -41,6 +41,20 @@
             <el-input v-model="form.itemTitle8"></el-input>
             <el-input type="textarea"  v-model="form.itemText8"></el-input>
           </el-form-item>
+          <el-form-item label="Изображение">
+            <el-upload
+              class="upload-demo"
+              drag
+              action="https://jsonplaceholder.typicode.com/posts/"
+              :on-preview="handlePreview"
+              :on-remove="handleRemove"
+              :file-list="fileList"
+              multiple>
+              <i class="el-icon-upload"></i>
+              <div class="el-upload__text">Drop file here or <em>click to upload</em></div>
+              <div class="el-upload__tip" slot="tip">jpg/png files with a size less than 500kb</div>
+            </el-upload>
+          </el-form-item>
           <el-form-item>
             <el-button type="primary" @click="onSubmit">Редактировать</el-button>
             <el-button>Отмена</el-button>
