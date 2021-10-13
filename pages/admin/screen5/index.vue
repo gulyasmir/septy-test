@@ -39,9 +39,11 @@
       </el-form>
     </el-col>
     <el-col :span="12">
+      <div class="expample">
       <Screen5
         :screen5="this.form"
       />
+      </div>
     </el-col>
   </el-row>
 

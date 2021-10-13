@@ -25,9 +25,11 @@
       </el-form>
     </el-col>
     <el-col :span="12">
+      <div class="expample">
       <Screen6
         :screen6="this.form"
       />
+      </div>
     </el-col>
   </el-row>
 

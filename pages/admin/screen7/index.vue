@@ -31,9 +31,11 @@
       </el-form>
     </el-col>
     <el-col :span="12">
-      <Screen7
-        :screen7="this.form"
-      />
+      <div class="expample">
+        <Screen7
+          :screen7="this.form"
+        />
+      </div>
     </el-col>
   </el-row>
 

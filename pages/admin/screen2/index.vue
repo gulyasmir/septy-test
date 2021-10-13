@@ -33,6 +33,7 @@
         </el-form>
       </el-col>
       <el-col :span="12">
+        <div class="expample">
         <Screen2
           :screen="{'title':this.form.title, 'text':''}"
           :featuresList="[
@@ -46,6 +47,7 @@
             {id:8, icon:'icon8.png', text:this.form.item8}
         ]"
         />
+        </div>
       </el-col>
     </el-row>
 

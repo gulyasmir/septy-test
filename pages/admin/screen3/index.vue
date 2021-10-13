@@ -62,6 +62,7 @@
         </el-form>
       </el-col>
       <el-col :span="12">
+        <div class="expample">
         <Screen3
           :screen="{'title':this.form.title, 'text':''}"
           :listFor="[
@@ -75,6 +76,7 @@
             {id:8, title:this.form.itemTitle8, text:this.form.itemText8}
         ]"
         />
+        </div>
       </el-col>
     </el-row>
 
