@@ -8,8 +8,8 @@
                 :key="item.id"
         >
         <el-card
-          @click="this.goToPage()"
           shadow="hover">
+          <nuxt-link to="/admin/screen1">
           <el-image
             style="height:200px;"
             :src="imgLink(item.img)">
@@ -17,6 +17,7 @@
           <div class="text">
             {{item.title}}
           </div>
+          </nuxt-link>
         </el-card>
       </el-col>
    </el-row>
@@ -48,7 +49,7 @@ export default {
     },
     goToPage(){
       console.log('goToPage')
-    //  this.$router.push('/screen')
+    //  this.$router.push('/screen1')
     }
   }
 }

@@ -45,9 +45,8 @@ export default {
 <style lang="scss">
 
 .full-screen{
-  background: url("../static/image/banner.png") no-repeat;
+  background: url("../static/image/banner.png") no-repeat center;
   background-size:100%;
-  height: 100vh;
   display: flex;
   align-items: center;
 
@@ -68,7 +67,7 @@ export default {
 
 @media screen and (max-width: 1175px) {
   .full-screen{
-    background: url("../static/image/mobile-banner.png") no-repeat;
+    background: url("../static/image/mobile-banner.png") no-repeat center;
     background-size:100%;
     height: 100vh;
     display: flex;

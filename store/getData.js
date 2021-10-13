@@ -5,7 +5,7 @@ export const actions = {
 
       let resultdata = await this.$axios.get(url)
 
-      console.log('screen result', resultdata)
+      console.log('screen1 result', resultdata)
       return resultdata.data
     } catch(e){
       console.log('getClients store error')
