@@ -9,7 +9,7 @@
         >
         <el-card
           shadow="hover">
-          <nuxt-link to="/admin/screen1">
+          <nuxt-link :to="'/admin/screen' + item.id">
           <el-image
             style="height:200px;"
             :src="imgLink(item.img)">

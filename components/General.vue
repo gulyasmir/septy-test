@@ -5,7 +5,8 @@
   />
   <div class="container">
     <Screen2
-    :featuresList="this.list2Data"
+      :screen="this.screenData[1]"
+      :featuresList="this.list2Data"
     />
     <Screen3
       :listFor="this.list3Data"

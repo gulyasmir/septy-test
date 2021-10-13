@@ -1,7 +1,7 @@
 <template>
   <div  id="screen2">
     <div class="screen">
-      <h2>Вместе с SeptyTest Вы самостоятельно <br> за 2-3 минуты можете:</h2>
+      <h2>{{this.screen.title}}</h2>
       <el-row :gutter="10">
         <el-col :xs="24" :sm="24" :md="12" :lg="6" :xl="6"
                 v-for="item in featuresList"
@@ -44,6 +44,10 @@ import imageLink from '@/plugins/imageLink'
 export default {
   name: "Screen2",
   props:{
+    screen:{
+      type:Object,
+      default:{'title':'', 'text':''}
+    },
     featuresList:{
       type:Array,
       default:[]
@@ -74,7 +78,9 @@ export default {
 </script>
 
 <style lang="scss" >
-
+#screen2 h2{
+  width: 60%;
+}
 .features{
   padding: 8px 2px;
 
