@@ -19,7 +19,7 @@ export const actions = {
       let resultdata = await this.$axios.get(url)
 
       console.log('contacts result', resultdata)
-      return resultdata.data
+      return resultdata.data[1]
     } catch(e){
       console.log('getClients store error')
       throw  e

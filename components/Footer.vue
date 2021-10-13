@@ -1,60 +1,25 @@
 <template>
-    <div id="screen7" class="screen">
-      <div class="footer">
-         <el-row :gutter="10">
-      <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
-       <el-image
-         :src="imgLink(linkImg)">
-       </el-image>
-       <span class="contacts"> :Контакты</span>
-
-     </el-col>
-      <el-col :xs="24" :sm="24" :md="6" :lg="6" :xl="6">
-        <p>
-          {{this.contactData.address}}
-          Россия, Екатеринбург, Чапаева, 72
-        </p>
-       <a class="whatsapp" href="https://wa.me/+79258600106" target="_blank">
-         Написать нам в WhatsApp
-       </a>
-     </el-col>
-      <el-col :xs="24" :sm="24" :md="6" :lg="6" :xl="6">
-       <p>
-       <a href="mailto:info@chymes.ru" target="_blank">
-         {{this.contactData.email}}
-         info@chymes.ru
-       </a>
-       </p>
-       <p>
-         <a href="https://www.chymes.ru" target="_blank">
-           {{this.contactData.site}}
-         www.chymes.ru
-       </a>
-       </p>
-     </el-col>
-   </el-row>
-    </div>
-  </div>
+  <Screen7
+    :screen7="this.contactData"
+  />
 </template>
 
 <script>
-import imageLink from "@/plugins/imageLink";
-
+import Screen7 from '@/components/Screen7'
 export default {
 name: "Footer",
+  components: {
+    Screen7
+  },
   data() {
     return {
-      linkImg:'logo-footer.png',
-      contactData:{},
+      contactData:{}
     }
   },
   beforeMount() {
     this.getContactData()
   },
   methods: {
-    imgLink(iconName) {
-      return imageLink(iconName)
-    },
     async getContactData() {
       this.contactData = await this.$store.dispatch('getData/getContactData')
     },
