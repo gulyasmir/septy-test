@@ -57,7 +57,7 @@
           </el-form-item>
           <el-form-item>
             <el-button type="primary" @click="onSubmit">Редактировать</el-button>
-            <el-button>Отмена</el-button>
+            <ButtonToBack/>
           </el-form-item>
         </el-form>
       </el-col>
@@ -85,11 +85,13 @@
 
 <script>
 import Screen3 from '@/components/Screen3'
+import ButtonToBack from '@/components/ButtonToBack'
 export default {
   name: "index",
   layout:'admin',
   components:{
-    Screen3
+    Screen3,
+    ButtonToBack
   },
   data(){
     return{
@@ -124,9 +126,13 @@ export default {
 
   },
   methods: {
-
     onSubmit() {
-      console.log('submit!');
+      let formData = {
+        title: this.form.title,
+        id:3
+      }
+
+
     },
     async getScreenData() {
       this.screenData = await this.$store.dispatch('getData/getScreenData')

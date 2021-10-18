@@ -34,7 +34,7 @@
         </el-form-item>
         <el-form-item>
           <el-button type="primary" @click="onSubmit">Редактировать</el-button>
-          <el-button>Отмена</el-button>
+         <ButtonToBack/>
         </el-form-item>
       </el-form>
     </el-col>
@@ -52,11 +52,13 @@
 
 <script>
 import Screen1 from '@/components/Screen1'
+import ButtonToBack from '@/components/ButtonToBack'
 export default {
   name: "index",
   layout:'admin',
   components:{
-    Screen1
+    Screen1,
+    ButtonToBack
   },
   data(){
     return{
@@ -98,7 +100,6 @@ export default {
     screenData(){
       this.form = this.screenData[0]
     }
-
   }
 }
 </script>

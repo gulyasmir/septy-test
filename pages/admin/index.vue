@@ -26,6 +26,7 @@
 
 <script>
 import imageLink from '@/plugins/imageLink'
+
 export default {
   name: "index",
   layout:'admin',

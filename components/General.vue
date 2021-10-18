@@ -60,7 +60,6 @@ export default {
   methods: {
     async getScreenData() {
       this.screenData =  await this.$store.dispatch('getData/getScreenData')
-
     },
     async getList2Data() {
       this.list2Data = await this.$store.dispatch('getData/getList2Data')

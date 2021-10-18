@@ -1,6 +1,7 @@
 <template>
   <Screen7
     :screen7="this.contactData"
+    :screen="this.screenData[6]"
   />
 </template>
 
@@ -13,13 +14,19 @@ name: "Footer",
   },
   data() {
     return {
-      contactData:{}
+      contactData:{},
+      screenData:[]
     }
   },
   beforeMount() {
     this.getContactData()
+    this.getScreenData()
   },
   methods: {
+    async getScreenData() {
+      this.screenData =  await this.$store.dispatch('getData/getScreenData')
+      console.log('this.screenData', this.screenData)
+    },
     async getContactData() {
       this.contactData = await this.$store.dispatch('getData/getContactData')
     },

@@ -34,7 +34,7 @@
         </el-form-item>
         <el-form-item>
           <el-button type="primary" @click="onSubmit">Редактировать</el-button>
-          <el-button>Отмена</el-button>
+          <ButtonToBack/>
         </el-form-item>
       </el-form>
     </el-col>
@@ -52,11 +52,13 @@
 
 <script>
 import Screen5 from '@/components/Screen5'
+import ButtonToBack from '@/components/ButtonToBack'
 export default {
   name: "index",
   layout:'admin',
   components:{
-    Screen5
+    Screen5,
+    ButtonToBack
   },
   data(){
     return{
@@ -71,8 +73,23 @@ export default {
     this.getScreenData()
   },
   methods: {
-    onSubmit() {
-      console.log('submit!');
+    async onSubmit() {
+      console.log('submit!')
+      let formData = {
+        title: this.form.title,
+        text: this.form.text,
+        img: this.form.img,
+        id:5
+      }
+      console.log('formData', formData)
+      let  result =  await this.$store.dispatch('updateData/updateScreenData', formData)
+      if (result.error=== true){
+        this.$message.warning('Упс!!! Что-то пошло не так.')
+      }
+      else {
+        this.$message.success('Успешно сохранено!')
+      }
+      this.$router.push('/admin')
     },
     async getScreenData() {
       this.screenData = await this.$store.dispatch('getData/getScreenData')

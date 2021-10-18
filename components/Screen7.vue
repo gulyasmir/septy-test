@@ -6,8 +6,8 @@
           <el-image
             :src="imgLink(linkImg)">
           </el-image>
-          <span class="contacts"> :Контакты</span>
-
+          <span class="contacts"> {{this.screen.title}}</span>
+          <p>{{this.screen.text}}</p>
         </el-col>
         <el-col :xs="24" :sm="24" :md="6" :lg="6" :xl="6">
           <p>
@@ -39,6 +39,10 @@ import imageLink from "@/plugins/imageLink"
 export default {
   name: "Screen7",
   props:{
+    screen:{
+      type:Object,
+      default:{}
+    },
     screen7:{
       type:Object,
       default:{}
