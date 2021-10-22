@@ -61,6 +61,7 @@ export default {
   },
   data(){
     return{
+      screenData:{},
       contactData:{},
       form: {
         title:'',
@@ -73,11 +74,11 @@ export default {
     }
   },
   beforeMount() {
+    this.getScreenData()
     this.getContactData()
   },
   methods: {
     async onSubmit() {
-      console.log('submit!')
       let formData = {
         address: this.form.address,
         email: this.form.email,
@@ -91,13 +92,11 @@ export default {
         img: 'rrr',
         id:7
       }
-      console.log('screenData', screenData)
       let  resultScreen =  await this.$store.dispatch('updateData/updateScreenData', screenData)
 
       if (resultScreen.error=== true){
         this.$message.warning('Упс!!! Что-то пошло не так.')
       }
-      console.log('formData', formData)
         let  result =  await this.$store.dispatch('updateData/updateContact', formData)
         if (result.error=== true){
           this.$message.warning('Упс!!! Что-то пошло не так.')
@@ -115,15 +114,18 @@ export default {
     }
   },
   watch:{
-    screenData(){
-      this.form.title = this.screenData[6].title
-      this.form.text = this.screenData[6].text
-    },
     contactData(){
+      console.log('this.contactData', this.contactData)
       this.form.address = this.contactData.address
       this.form.email = this.contactData.email
       this.form.site = this.contactData.site
       this.form.whatsapp = this.contactData.whatsapp
+    },
+    screenData(){
+      console.log('this.screenData', this.screenData)
+      let screenInfo = this.screenData[6]
+      this.form.title = screenInfo.title
+      this.form.text = screenInfo.text
     }
   }
 }

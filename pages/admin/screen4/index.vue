@@ -27,9 +27,9 @@
               :on-remove="handleRemove"
               :file-list="fileList"
               multiple>
-              <i class="el-icon-upload"></i>
-              <div class="el-upload__text">Drop file here or <em>click to upload</em></div>
-              <div class="el-upload__tip" slot="tip">jpg/png files with a size less than 500kb</div>
+              <el-image :src="imgLink(iconUpload)" class="upload-icon"></el-image>
+              <div class="el-upload__text">Перетащите файл сюда <em>или щелкните мышкой тут</em></div>
+              <div class="el-upload__tip" slot="tip">Файл должен быть формата jpg/png и меньше 500kb</div>
             </el-upload>
           </el-form-item>
           <el-form-item label="Список">
@@ -72,6 +72,7 @@
 </template>
 
 <script>
+import imageLink from '@/plugins/imageLink'
 import Screen2 from '@/components/Screen2'
 import ButtonToBack from '@/components/ButtonToBack'
 export default {
@@ -83,6 +84,7 @@ export default {
   },
   data(){
     return{
+      iconUpload:'upload-icon.png',
       screenData:[],
       list4Data:[],
       form: {
@@ -116,7 +118,7 @@ export default {
       }
       console.log('formData', formData)
       let  result =  await this.$store.dispatch('updateData/updateScreenData', formData)
-      for (let i=1;i<8;i++){
+      for (let i=1;i<9;i++){
         let titleItem
         switch (i){
           case 1:
@@ -168,6 +170,9 @@ export default {
     async getList4Data() {
       this.list4Data = await this.$store.dispatch('getData/getList4Data')
     },
+    imgLink(iconName){
+      return imageLink(iconName)
+    }
   },
   watch:{
     list4Data(){

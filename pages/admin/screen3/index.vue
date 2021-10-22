@@ -50,9 +50,9 @@
               :on-remove="handleRemove"
               :file-list="fileList"
               multiple>
-              <i class="el-icon-upload"></i>
-              <div class="el-upload__text">Drop file here or <em>click to upload</em></div>
-              <div class="el-upload__tip" slot="tip">jpg/png files with a size less than 500kb</div>
+              <el-image :src="imgLink(iconUpload)" class="upload-icon"></el-image>
+              <div class="el-upload__text">Перетащите файл сюда <em>или щелкните мышкой тут</em></div>
+              <div class="el-upload__tip" slot="tip">Файл должен быть формата jpg/png и меньше 500kb</div>
             </el-upload>
           </el-form-item>
           <el-form-item>
@@ -84,6 +84,7 @@
 </template>
 
 <script>
+import imageLink from '@/plugins/imageLink'
 import Screen3 from '@/components/Screen3'
 import ButtonToBack from '@/components/ButtonToBack'
 export default {
@@ -95,6 +96,7 @@ export default {
   },
   data(){
     return{
+      iconUpload:'upload-icon.png',
       screenData:[],
       list3Data:[],
       form: {
@@ -175,9 +177,6 @@ export default {
     this.getScreenData()
     this.getList3Data()
   },
-  mounted() {
-
-  },
   methods: {
     async onSubmit() {
           let formData = {
@@ -248,6 +247,9 @@ export default {
     async getList3Data() {
       this.list3Data = await this.$store.dispatch('getData/getList3Data')
     },
+    imgLink(iconName){
+      return imageLink(iconName)
+    }
   },
   watch:{
     list3Data(){
