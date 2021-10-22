@@ -8,7 +8,7 @@
       </el-col>
       <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
       <div class="list">
-        <h2>Именно SeptyTest:</h2>
+        <h2>{{this.screen.title}}</h2>
           <el-card
             class="item"
             v-for="item in listFor"
@@ -36,6 +36,10 @@ import imageLink from '@/plugins/imageLink'
 export default {
   name: "Screen3",
   props:{
+    screen:{
+      type:Object,
+      default:{'title':'', 'text':''}
+    },
     listFor:{
       type:Array,
       default:[]

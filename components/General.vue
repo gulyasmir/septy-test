@@ -9,6 +9,7 @@
       :featuresList="this.list2Data"
     />
     <Screen3
+      :screen="this.screenData[2]"
       :listFor="this.list3Data"
     />
     <Screen4
