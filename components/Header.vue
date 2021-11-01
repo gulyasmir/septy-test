@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <div id="header" class="header">
     <div class="logo">
       <el-image :src="logoUrl"></el-image>
     </div>
