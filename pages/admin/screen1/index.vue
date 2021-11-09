@@ -21,12 +21,11 @@
         <el-form-item label="Баннер">
           <el-upload
             class="upload-demo"
+            :auto-upload="false"
             drag
             action="https://jsonplaceholder.typicode.com/posts/"
-            :on-preview="handlePreview"
-            :on-remove="handleRemove"
-            :file-list="fileList"
-            multiple>
+            :on-change="uploadImg"
+           >
             <el-image :src="imgLink(iconUpload)" class="upload-icon"></el-image>
             <div class="el-upload__text">Перетащите файл сюда <em>или щелкните мышкой тут</em></div>
             <div class="el-upload__tip" slot="tip">Файл должен быть формата jpg/png и меньше 500kb</div>
@@ -65,6 +64,7 @@ export default {
     return{
       screenData:[],
       iconUpload:'upload-icon.png',
+      image:null,
       form: {
         title: '',
         text: '',
@@ -76,12 +76,16 @@ export default {
     this.getScreenData()
   },
   methods: {
+    uploadImg(file, filelist){
+      console.log('file', file)
+      this.image = file.raw
+    },
     async onSubmit() {
       console.log('submit!')
       let formData = {
         title: this.form.title,
         text: this.form.text,
-        img: this.form.img,
+        img: this.image,
         id:1
       }
       console.log('formData', formData)
