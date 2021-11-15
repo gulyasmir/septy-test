@@ -110,7 +110,7 @@ export default {
             console.log('result', result)
             if (result) {
               this.$message.success('Добро пожаловать в панель управления!')
-              this.$router.push('/clients')
+              this.$router.push('/admin')
             } else {
               this.loading = false
               this.$message.warning('Нет доступа! Проверьте правильность логина и  пароля')
