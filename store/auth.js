@@ -20,7 +20,7 @@ export const mutations = {
 export const actions = {
   async login({commit, dispatch}, payload) {
     try {
-      const url=`https://septytest.herokuapp.com/api/login?email=${payload.email}&password=${payload.password}`
+      const url=`http://localhost:3000/api/login?email=${payload.email}&password=${payload.password}`
       const resultdata = await this.$axios.post(url)
       console.log('login result', resultdata.data)
       const token = resultdata.data.token
