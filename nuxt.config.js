@@ -38,7 +38,8 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
-    '@/plugins/element-ui'
+    '@/plugins/element-ui',
+    '@plugins/axios'
   ],
   /*
   ** Auto import components
@@ -60,7 +61,8 @@ export default {
     '@nuxtjs/pwa'
   ],
   axios: {
-
+    baseURL: process.env.BASE_URL || 'http://localhost:3000'
+    // See https://github.com/nuxt-community/axios-module#options
   },
   pwa: {
     icon:true

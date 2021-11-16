@@ -10,7 +10,6 @@ export const state = () =>({
 export const mutations = {
   setToken(state, token) {
     state.token = token
-    console.log('state.token', state.token)
   },
   clearToken(state) {
     state.token = null
@@ -22,7 +21,6 @@ export const actions = {
     try {
       const url=`https://septy-test-api.herokuapp.com/api/login?name=${payload.email}&password=${payload.password}`
       const resultdata = await this.$axios.post(url)
-      console.log('login result', resultdata.data)
       const token = resultdata.data.token
       if (resultdata.data.token) {
         dispatch('setToken', token)
@@ -31,7 +29,6 @@ export const actions = {
         return false
       }
     } catch(e){
-      console.log('login error')
       throw  e
     }
   },
@@ -56,13 +53,11 @@ export const actions = {
     } else {
       cookieStr = this.app.context.req.headers.cookie
     }
-    //  console.log('cookieStr', cookieStr)
+   
     const cookies = Cookie.parse(cookieStr || '') || {}
     const token = cookies['jwt-token']
-    // console.log('  token = ', token)
 
     if (isJWTValid(token)){
-      // console.log('OK!!!!')
       dispatch('setToken', token)
     } else {
       dispatch('logout')

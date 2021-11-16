@@ -81,7 +81,6 @@ export default {
       this.image = file.raw
     },
     async onSubmit() {
-      console.log('submit!')
       let formData = {
         title: this.form.title,
         text: this.form.text,
@@ -90,7 +89,7 @@ export default {
       }
       console.log('formData', formData)
       let  result =  await this.$store.dispatch('updateData/updateScreenData', formData)
-      if (result.error=== true){
+      if (result.error === true){
         this.$message.warning('Упс!!! Что-то пошло не так.')
       }
       else {
