@@ -87,7 +87,7 @@ export default {
     submitForm(formName){
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          this.$alert('Спасибо за Ваше сообщение!<br> Наш менеджер свяжется с Вами и ответит на ваш вопрос в ближайшее время!', '', {
+          this.$alert('Ваше сообщение отправлено, наш специалист свяжется с Вами в ближайшее рабочее время.', '', {
             confirmButtonText: 'OK',
             dangerouslyUseHTMLString: true,
           });

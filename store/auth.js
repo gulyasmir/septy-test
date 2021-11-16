@@ -20,15 +20,16 @@ export const mutations = {
 export const actions = {
   async login({commit, dispatch}, payload) {
     try {
-      const url=`http://localhost:3000/api/login?email=${payload.email}&password=${payload.password}`
+      const url=`http://localhost:8000/api/login?name=${payload.email}&password=${payload.password}`
       const resultdata = await this.$axios.post(url)
       console.log('login result', resultdata.data)
       const token = resultdata.data.token
-      if (resultdata.data.success) {
+      if (resultdata.data.token) {
         dispatch('setToken', token)
         return true
+      } else {
+        return false
       }
-      return false
     } catch(e){
       console.log('login error')
       throw  e
