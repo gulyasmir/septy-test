@@ -84,7 +84,8 @@ export default {
       let formData = {
         title: this.form.title,
         text: this.form.text,
-        img: this.image,
+      //  img: this.image,
+        img: 'banner.png',
         id:1
       }
       console.log('formData', formData)
