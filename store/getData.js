@@ -8,7 +8,6 @@ export const actions = {
       console.log('screen1 result', resultdata)
       return resultdata.data
     } catch(e){
-      console.log('getClients store error')
       throw  e
     }
   },
@@ -21,7 +20,6 @@ export const actions = {
       console.log('contacts result', resultdata)
       return resultdata.data[1]
     } catch(e){
-      console.log('getClients store error')
       throw  e
     }
   },
@@ -34,7 +32,6 @@ export const actions = {
       console.log('list-screen2 result', resultdata)
       return resultdata.data
     } catch(e){
-      console.log('getClients store error')
       throw  e
     }
   },
@@ -47,7 +44,6 @@ export const actions = {
       console.log('list-screen3 result', resultdata)
       return resultdata.data
     } catch(e){
-      console.log('getClients store error')
       throw  e
     }
   },
@@ -60,7 +56,6 @@ export const actions = {
       console.log('list-screen4 result', resultdata)
       return resultdata.data
     } catch(e){
-      console.log('getClients store error')
       throw  e
     }
   }
