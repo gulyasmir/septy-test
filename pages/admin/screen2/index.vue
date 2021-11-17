@@ -138,16 +138,15 @@ export default {
             break
         }
 
+        titleItem = titleItem.trim()
         let listData = {
           text: titleItem,
           id:i
         }
-        console.log('listData', listData)
         let  resultList =  await this.$store.dispatch('updateData/updateList2Data', listData)
       }
 
-
-      if (result.error=== true){
+      if (result.error){
         this.$message.warning('Упс!!! Что-то пошло не так.')
       }
       else {
