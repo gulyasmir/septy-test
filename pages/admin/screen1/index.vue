@@ -21,9 +21,9 @@
         <el-form-item label="Баннер">
           <el-upload
             class="upload-demo"
-            :auto-upload="false"
+            :auto-upload="true"
             drag
-            action="https://jsonplaceholder.typicode.com/posts/"
+            action="http://localhost:8000/upload"
             :on-change="uploadImg"
            >
             <el-image :src="imgLink(iconUpload)" class="upload-icon"></el-image>
@@ -79,13 +79,13 @@ export default {
     uploadImg(file, filelist){
       console.log('file', file)
       this.image = file.raw
+      this.form.img = file.name
     },
     async onSubmit() {
       let formData = {
         title: this.form.title,
         text: this.form.text,
-      //  img: this.image,
-        img: 'banner.png',
+        img: this.form.img,
         id:1
       }
       console.log('formData', formData)
