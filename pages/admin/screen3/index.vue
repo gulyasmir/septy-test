@@ -173,7 +173,7 @@ export default {
           }
           let  result =  await this.$store.dispatch('updateData/updateScreenData', formData)
 
-          for (let i=1;i<9;i++){
+          for (let i=1;i<8;i++){
             let title
             let text
             switch (i){

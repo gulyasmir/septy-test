@@ -3,7 +3,6 @@ export default function ({$axios, redirect, store}){
       if (request.method == 'put') {
         if (store.getters['auth/isAuthenticated'] && !request.headers.common.Authorization){
           const token = store.getters['auth/token']
-          console.log('token', token)
           request.headers.common.Authorization = token ? `Bearer ${token}` : ''
         }
       }
@@ -12,7 +11,6 @@ export default function ({$axios, redirect, store}){
 
   $axios.onError(error =>{
     if (error.response){
-      console.log('error.response.status', error.response.status)
       if (error.response.status === 401) {
         redirect('/login?message=session')
         store.dispatch('auth/logout')
