@@ -21,9 +21,9 @@
         <el-form-item label="Баннер">
           <el-upload
             class="upload-demo"
-            :auto-upload="true"
+            :auto-upload="false"
             drag
-            action="http://localhost:8000/upload"
+            action="/upload"
             :on-change="uploadImg"
            >
             <el-image :src="imgLink(iconUpload)" class="upload-icon"></el-image>
@@ -90,6 +90,9 @@ export default {
       }
       console.log('formData', formData)
       let  result =  await this.$store.dispatch('updateData/updateScreenData', formData)
+      if (this.image){
+
+      }
       if (result.error === true){
         this.$message.warning('Упс!!! Что-то пошло не так.')
       }
