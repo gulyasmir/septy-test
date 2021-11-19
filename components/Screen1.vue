@@ -36,6 +36,7 @@ export default {
   },
   mounted() {
     console.log('this.screen 111',this.screen)
+    this.styleScreen1()
   },
   methods: {
     goToForm(){
