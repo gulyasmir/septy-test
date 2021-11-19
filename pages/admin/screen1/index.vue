@@ -83,9 +83,6 @@ export default {
 
       this.$axios.post('https://septy-test-api.herokuapp.com/api/upload', this.image)
         .then(res => {
-          this.progress = 0;
-          this.files = [];
-
           console.log(res)
         })
         .catch(err => console.log(err))
