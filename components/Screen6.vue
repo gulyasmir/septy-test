@@ -87,10 +87,24 @@ export default {
     submitForm(formName){
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          this.$alert('Ваше сообщение отправлено, наш специалист свяжется с Вами в ближайшее рабочее время.', '', {
-            confirmButtonText: 'OK',
-            dangerouslyUseHTMLString: true,
-          });
+          let formData = {
+            email: this.form.email,
+            name: this.form.name,
+            text: this.form.text
+          }
+          console.log('formData', formData)
+          let  result =  await this.$store.dispatch('sendingOrder/sendingData', formData)
+          if (result){
+            this.$alert('Ваше сообщение отправлено, наш специалист свяжется с Вами в ближайшее рабочее время.', '', {
+              confirmButtonText: 'OK',
+              dangerouslyUseHTMLString: true,
+            });
+          } else {
+            this.$alert('Ваше сообщение не отправлено ((.', '', {
+              confirmButtonText: 'OK',
+              dangerouslyUseHTMLString: true,
+            });
+          }
         } else {
           this.$alert('Необходимо корректно заполнить поля Имя и Email!', '', {
             confirmButtonText: 'OK',

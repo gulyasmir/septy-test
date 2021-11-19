@@ -90,9 +90,7 @@ export default {
       }
       console.log('formData', formData)
       let  result =  await this.$store.dispatch('updateData/updateScreenData', formData)
-      if (this.image){
 
-      }
       if (result.error === true){
         this.$message.warning('Упс!!! Что-то пошло не так.')
       }
