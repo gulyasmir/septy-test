@@ -95,6 +95,11 @@ export default {
           console.log('formData', formData)
           let result = await this.$store.dispatch('sendingOrder/sendingData', formData)
           if (result) {
+            this.form = {
+              name: '',
+              email: '',
+              text: ''
+            }
             this.$alert('Ваше сообщение отправлено, наш специалист свяжется с Вами в ближайшее рабочее время.', '', {
               confirmButtonText: 'OK',
               dangerouslyUseHTMLString: true,
