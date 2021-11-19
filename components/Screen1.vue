@@ -1,5 +1,9 @@
 <template>
- <div id="screen1" class="full-screen">
+ <div
+   id="screen1"
+   :style="this.styleScreen1"
+   class="full-screen"
+ >
    <div class="info">
      <h1>{{this.screen.title}}</h1>
      <h3>
@@ -22,14 +26,16 @@ export default {
   props:{
     screen:{
       type:Object,
-      default:{'title':'', 'text':''}
+      default:{'title':'', 'text':'', 'img':'http://localhost:8000/storage/images/migrate_create.png'}
     }
   },
   data() {
     return {
       textScreen1: 'Получить консультацию',
-      screen1:this.screen[0]
     }
+  },
+  mounted() {
+    console.log('this.screen 111',this.screen)
   },
   methods: {
     goToForm(){
@@ -38,6 +44,14 @@ export default {
         behavior: 'smooth'
       });
     }
+  },
+  computed:{
+    styleScreen1() {
+      let backgroundImg = 'url("'+ this.screen.img + '") no-repeat center;'
+      return {
+        background: backgroundImg
+      }
+    }
   }
 }
 </script>
@@ -45,7 +59,8 @@ export default {
 <style lang="scss">
 
 .full-screen{
-  background: url("../static/image/banner.png") no-repeat center;
+ /* background: url("../static/image/banner.png") no-repeat center;*/
+  /*  background: url("http://localhost:8000/storage/images/111.jpg") no-repeat center;*/
   background-size:100%;
   display: flex;
   align-items: center;

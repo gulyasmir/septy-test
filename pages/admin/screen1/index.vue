@@ -21,9 +21,9 @@
         <el-form-item label="Баннер">
           <el-upload
             class="upload-demo"
-            :auto-upload="false"
+            :auto-upload="true"
             drag
-            action="/upload"
+            action="http://localhost:8000/upload"
             :on-change="uploadImg"
            >
             <el-image :src="imgLink(iconUpload)" class="upload-icon"></el-image>
