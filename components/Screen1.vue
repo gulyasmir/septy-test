@@ -26,7 +26,7 @@ export default {
   props:{
     screen:{
       type:Object,
-      default:{'title':'', 'text':'', 'img':'http://localhost:8000/storage/images/migrate_create.png'}
+      default:{'title':'', 'text':'', 'img':''}
     }
   },
   data() {
@@ -47,7 +47,7 @@ export default {
   },
   computed:{
     styleScreen1() {
-      let backgroundImg = 'url("'+ this.screen.img + '") no-repeat center;'
+      let backgroundImg = 'url("https://septy-test-api.herokuapp.com/storage/images/'+ this.screen.img + '") no-repeat center;'
       return {
         background: backgroundImg
       }
