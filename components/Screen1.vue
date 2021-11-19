@@ -26,7 +26,7 @@ export default {
   props:{
     screen:{
       type:Object,
-      default:{'title':'', 'text':'', 'img':''}
+      default:{'title':'', 'text':'', 'img':'111.jpg'}
     }
   },
   data() {
