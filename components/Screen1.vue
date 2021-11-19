@@ -45,12 +45,16 @@ export default {
       el.scrollIntoView({
         behavior: 'smooth'
       });
-    },
+    }
+  },
+  computed:{
     styleScreen1() {
-      console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!this.screen.img', this.screen.img)
-      let backgroundImg = 'url("https://septy-test-api.herokuapp.com/storage/images/'+ this.screen.img + '") no-repeat center;'
-      return {
-        background: backgroundImg
+      if (this.screen.img){
+        console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!this.screen.img', this.screen.img)
+        let backgroundImg = 'url("https://septy-test-api.herokuapp.com/storage/images/'+ this.screen.img + '") no-repeat center;'
+        return {
+          background: backgroundImg
+        }
       }
     }
   }
