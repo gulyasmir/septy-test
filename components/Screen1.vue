@@ -43,9 +43,7 @@ export default {
       el.scrollIntoView({
         behavior: 'smooth'
       });
-    }
-  },
-  computed:{
+    },
     styleScreen1() {
       let backgroundImg = 'url("https://septy-test-api.herokuapp.com/storage/images/'+ this.screen.img + '") no-repeat center;'
       return {
