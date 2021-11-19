@@ -68,7 +68,7 @@ export default {
       form: {
         title: '',
         text: '',
-        img:'banner.png'
+        img:''
       }
     }
   },
