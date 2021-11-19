@@ -1,7 +1,7 @@
 <template>
  <div
    id="screen1"
-   :style="this.bgImage"
+   :style="this.styleScreen1"
    class="full-screen"
  >
    <div class="info">
@@ -37,7 +37,7 @@ export default {
   },
   mounted() {
     console.log('this.screen 111',this.screen)
-
+    this.styleScreen1()
   },
   methods: {
     goToForm(){
@@ -47,15 +47,8 @@ export default {
       });
     },
     styleScreen1() {
+      console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!this.screen.img', this.screen.img)
       let backgroundImg = 'url("https://septy-test-api.herokuapp.com/storage/images/'+ this.screen.img + '") no-repeat center;'
-      return {
-        background: backgroundImg
-      }
-    }
-  },
-  watch:{
-    bgImage(){
-      let backgroundImg = 'url("https://septy-test-api.herokuapp.com/storage/images/'+ this.bgImage + '") no-repeat center;'
       return {
         background: backgroundImg
       }
