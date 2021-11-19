@@ -1,7 +1,7 @@
 <template>
  <div
    id="screen1"
-   :style="this.styleScreen1"
+   :style="this.bgImage"
    class="full-screen"
  >
    <div class="info">
@@ -32,11 +32,12 @@ export default {
   data() {
     return {
       textScreen1: 'Получить консультацию',
+      bgImage:this.screen.img
     }
   },
   mounted() {
     console.log('this.screen 111',this.screen)
-    this.styleScreen1()
+
   },
   methods: {
     goToForm(){
@@ -47,6 +48,14 @@ export default {
     },
     styleScreen1() {
       let backgroundImg = 'url("https://septy-test-api.herokuapp.com/storage/images/'+ this.screen.img + '") no-repeat center;'
+      return {
+        background: backgroundImg
+      }
+    }
+  },
+  watch:{
+    bgImage(){
+      let backgroundImg = 'url("https://septy-test-api.herokuapp.com/storage/images/'+ this.bgImage + '") no-repeat center;'
       return {
         background: backgroundImg
       }
