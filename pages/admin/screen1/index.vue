@@ -23,7 +23,7 @@
             class="upload-demo"
             :auto-upload="true"
             drag
-            action="http://localhost:8000/upload"
+            action="https://septy-test-api.herokuapp.com/upload"
             :on-change="uploadImg"
            >
             <el-image :src="imgLink(iconUpload)" class="upload-icon"></el-image>
