@@ -32,7 +32,7 @@ export default {
   data() {
     return {
       textScreen1: 'Получить консультацию',
-      bgImage:''
+      bgImage:{}
     }
   },
   mounted() {
@@ -49,7 +49,9 @@ export default {
     },
     styleScreen1(){
       console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!this.screen.img', this.screen.img)
-      this.bgImage = 'url("https://septy-test-api.herokuapp.com/storage/images/'+ this.screen.img + '") no-repeat center;'
+      this.bgImage = {
+       background: 'url("https://septy-test-api.herokuapp.com/storage/images/'+ this.screen.img + '") no-repeat center;'
+      }
     }
   }
 }
