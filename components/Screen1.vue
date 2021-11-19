@@ -1,7 +1,7 @@
 <template>
  <div
    id="screen1"
-   :style="this.styleScreen1"
+   :style="this.bgImage"
    class="full-screen"
  >
    <div class="info">
@@ -32,12 +32,13 @@ export default {
   data() {
     return {
       textScreen1: 'Получить консультацию',
-      bgImage:this.screen.img
+      bgImage:''
     }
   },
   mounted() {
-    console.log('this.screen 111',this.screen)
+    console.log('mounted mounted mounted mounted mounted this.screen 111',this.screen)
     this.styleScreen1()
+    setTimeout(this.styleScreen1, 2000)
   },
   methods: {
     goToForm(){
@@ -45,17 +46,10 @@ export default {
       el.scrollIntoView({
         behavior: 'smooth'
       });
-    }
-  },
-  computed:{
-    styleScreen1() {
-
-        console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!this.screen.img', this.screen.img)
-        let backgroundImg = 'url("https://septy-test-api.herokuapp.com/storage/images/'+ this.screen.img + '") no-repeat center;'
-        return {
-          background: backgroundImg
-        }
-
+    },
+    styleScreen1(){
+      console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!this.screen.img', this.screen.img)
+      this.bgImage = 'url("https://septy-test-api.herokuapp.com/storage/images/'+ this.screen.img + '") no-repeat center;'
     }
   }
 }
