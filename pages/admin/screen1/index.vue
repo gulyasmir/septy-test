@@ -81,7 +81,7 @@ export default {
       this.image = file.raw
       this.form.img = file.name
 
-      this.$axios.post('https://septy-test-api.herokuapp.com/upload', this.image)
+      this.$axios.post('https://septy-test-api.herokuapp.com/api/upload', this.image)
         .then(res => {
           this.progress = 0;
           this.files = [];
