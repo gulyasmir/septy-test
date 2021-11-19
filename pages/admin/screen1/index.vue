@@ -21,7 +21,7 @@
         <el-form-item label="Баннер">
           <el-upload
             class="upload-demo"
-            :auto-upload="true"
+            :auto-upload="false"
             drag
             action="https://septy-test-api.herokuapp.com/upload"
             :on-change="uploadImg"
@@ -80,6 +80,15 @@ export default {
       console.log('file', file)
       this.image = file.raw
       this.form.img = file.name
+
+      this.$axios.post('https://septy-test-api.herokuapp.com/upload', this.image)
+        .then(res => {
+          this.progress = 0;
+          this.files = [];
+
+          console.log(res)
+        })
+        .catch(err => console.log(err))
     },
     async onSubmit() {
       let formData = {
