@@ -1,7 +1,7 @@
 <template>
  <div
    id="screen1"
-   :style="{backgroundImage: `url(${this.screen.img})` }"
+   :style="{backgroundImage: `url(https://septy-test-api.herokuapp.com/storage/images/${this.screen.img})` }"
    class="full-screen"
  >
    <div class="info">
@@ -26,21 +26,16 @@ export default {
   props:{
     screen:{
       type:Object,
-      default:{'title':'', 'text':'', 'img':'111.jpg'}
+      default:{'title':'', 'text':'', 'img':''}
     }
   },
   data() {
     return {
-      textScreen1: 'Получить консультацию',
-      bgImage:{
-        background: this.styleScreen1()//'url("https://septy-test-api.herokuapp.com/storage/images/111.jpg") no-repeat center'
-      }
+      textScreen1: 'Получить консультацию'
     }
   },
   mounted() {
-    console.log('mounted mounted mounted mounted mounted this.screen 111',this.screen)
-    this.styleScreen1()
-    setTimeout(this.styleScreen1, 2000)
+    console.log('mounted mounted mounted mounted mounted this.screen',this.screen)
   },
   methods: {
     goToForm(){
@@ -48,13 +43,6 @@ export default {
       el.scrollIntoView({
         behavior: 'smooth'
       });
-    },
-    styleScreen1(){
-      console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!this.screen.img', this.screen.img)
-      //this.bgImage = {
-      return {
-       background: 'url("https://septy-test-api.herokuapp.com/storage/images/'+ this.screen.img + '") no-repeat center;'
-      }
     }
   }
 }

@@ -84,8 +84,8 @@ export default {
     }
   },
   methods:{
-    submitForm(formName){
-      this.$refs[formName].validate((valid) => {
+   async submitForm(formName){
+      this.$refs[formName].validate(async (valid) => {
         if (valid) {
           let formData = {
             email: this.form.email,
@@ -93,8 +93,8 @@ export default {
             text: this.form.text
           }
           console.log('formData', formData)
-          let  result =  await this.$store.dispatch('sendingOrder/sendingData', formData)
-          if (result){
+          let result = await this.$store.dispatch('sendingOrder/sendingData', formData)
+          if (result) {
             this.$alert('Ваше сообщение отправлено, наш специалист свяжется с Вами в ближайшее рабочее время.', '', {
               confirmButtonText: 'OK',
               dangerouslyUseHTMLString: true,
