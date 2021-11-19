@@ -78,7 +78,7 @@ export default {
   methods: {
     uploadImg(file, filelist){
       console.log('file', file)
-      this.image = {file:file.raw}
+      this.image = [file.raw]
       this.form.img = file.name
 
       this.$axios.post('https://septy-test-api.herokuapp.com/api/upload', this.image)
