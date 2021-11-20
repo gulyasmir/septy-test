@@ -80,7 +80,7 @@ export default {
       console.log('file', file)
       this.image = [file.raw]
       this.form.img = file.name
-      let formData = {}
+      let formData = new FormData();
       formData.append('file', this.image)
 
       this.axios.post( 'https://septy-test-api.herokuapp.com/api/upload',
