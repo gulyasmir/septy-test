@@ -80,12 +80,22 @@ export default {
       console.log('file', file)
       this.image = [file.raw]
       this.form.img = file.name
+      let formData = {}
+      formData.append('file', this.image)
 
-      this.$axios.post('https://septy-test-api.herokuapp.com/api/upload', this.image)
-        .then(res => {
-          console.log(res)
-        })
-        .catch(err => console.log(err))
+      this.axios.post( 'https://septy-test-api.herokuapp.com/api/upload',
+        formData,
+        {
+          headers: {
+            'Content-Type': 'multipart/form-data'
+          }
+        }
+      ).then(function(){
+        console.log('SUCCESS!!');
+      })
+        .catch(function(){
+          console.log('FAILURE!!');
+        });
     },
     async onSubmit() {
       let formData = {
