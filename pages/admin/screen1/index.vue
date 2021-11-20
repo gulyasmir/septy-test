@@ -23,7 +23,7 @@
             class="upload-demo"
             :auto-upload="false"
             drag
-            action="https://septy-test-api.herokuapp.com/upload"
+            action="https://septy-test-api.herokuapp.com/api/upload"
             :on-change="uploadImg"
            >
             <el-image :src="imgLink(iconUpload)" class="upload-icon"></el-image>
@@ -77,14 +77,14 @@ export default {
   },
   methods: {
     uploadImg(file, filelist){
-      console.log('file', file)
       this.image = [file.raw]
       this.form.img = file.name
-      let formData = new FormData();
-      formData.append('file', this.image)
+      let formDataImg = {'file': file}
 
-      this.axios.post( 'https://septy-test-api.herokuapp.com/api/upload',
-        formData,
+      console.log('formData', formDataImg)
+
+      this.axios.post('https://septy-test-api.herokuapp.com/api/upload',
+        formDataImg,
         {
           headers: {
             'Content-Type': 'multipart/form-data'
