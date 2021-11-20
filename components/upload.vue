@@ -58,7 +58,7 @@ export default {
       const config = {
         onUploadProgress: (progressEvent) => this.progress = Math.round((progressEvent.loaded * 100) / progressEvent.total)
       };
-
+console.log('this.form', this.form)
       this.$axios.post('https://septy-test-api.herokuapp.com/api/upload-image', this.form, config)
         .then(res => {
           this.progress = 0;
