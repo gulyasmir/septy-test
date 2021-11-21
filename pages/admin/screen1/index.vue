@@ -75,6 +75,7 @@ export default {
   },
   methods: {
     successUpload(response, file, fileList){
+      console.log('response', response)
       this.form.img = response
     },
     async onSubmit() {
