@@ -79,12 +79,20 @@ export default {
     uploadImg(file, filelist){
       this.image = [file.raw]
       this.form.img = file.name
-      let formDataImg = {'file': file}
+      this.form.image = file
+      let formDataImg = {file:  this.image}
 
       console.log('formData', formDataImg)
 
-      this.axios.post('https://septy-test-api.herokuapp.com/api/upload',
-        formDataImg,
+
+      this.$axios.post('https://septy-test-api.herokuapp.com/api/upload',formDataImg)
+        .then(res => {
+          console.log(res)
+        })
+        .catch(err => console.log(err))
+
+    /*  this.axios.post('https://septy-test-api.herokuapp.com/api/upload',
+        this.form,
         {
           headers: {
             'Content-Type': 'multipart/form-data'
@@ -95,7 +103,7 @@ export default {
       })
         .catch(function(){
           console.log('FAILURE!!');
-        });
+        });*/
     },
     async onSubmit() {
       let formData = {
