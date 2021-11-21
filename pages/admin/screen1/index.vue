@@ -24,6 +24,7 @@
             drag
             action="https://septy-test-api.herokuapp.com/api/upload"
             :on-success="this.successUpload"
+            :on-error="this.errorUpload"
            >
             <el-image :src="imgLink(iconUpload)" class="upload-icon"></el-image>
             <div class="el-upload__text">Перетащите файл сюда <em>или щелкните мышкой тут</em></div>
@@ -74,6 +75,10 @@ export default {
     this.getScreenData()
   },
   methods: {
+    errorUpload(err, file, fileList){
+      console.log('err', err)
+      console.log('file', file)
+    },
     successUpload(response, file, fileList){
       console.log('response', response)
       this.form.img = response
