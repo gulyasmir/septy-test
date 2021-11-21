@@ -21,10 +21,8 @@
         <el-form-item label="Баннер">
           <el-upload
             class="upload-demo"
-            :auto-upload="false"
             drag
             action="https://septy-test-api.herokuapp.com/api/upload"
-            :on-change="uploadImg"
            >
             <el-image :src="imgLink(iconUpload)" class="upload-icon"></el-image>
             <div class="el-upload__text">Перетащите файл сюда <em>или щелкните мышкой тут</em></div>
@@ -85,11 +83,11 @@ export default {
       console.log('formData', formDataImg)
 
 
-      this.$axios.post('https://septy-test-api.herokuapp.com/api/upload',this.image)
-        .then(res => {
-          console.log(res)
-        })
-        .catch(err => console.log(err))
+    //  this.$axios.post('http://localhost:8000/api/upload', formDataImg)
+    //    .then(res => {
+     //     console.log(res)
+     //   })
+      //  .catch(err => console.log(err))
 
     /*  this.axios.post('https://septy-test-api.herokuapp.com/api/upload',
         this.form,
