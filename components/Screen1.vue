@@ -1,7 +1,7 @@
 <template>
  <div
    id="screen1"
-   :style="{backgroundImage: `url(https://septy-test-api.herokuapp.com/${this.screen.img})` }"
+   :style="{backgroundImage: `url(${this.screen.img})` }"
    class="full-screen"
  >
    <div class="info">

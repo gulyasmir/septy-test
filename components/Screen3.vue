@@ -60,7 +60,7 @@ export default {
   },
   computed:{
     url(){
-    return  `https://septy-test-api.herokuapp.com/${this.screen.img}`
+    return  `${this.screen.img}`
     }
   }
 }
