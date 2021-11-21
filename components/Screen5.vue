@@ -2,19 +2,11 @@
     <div  id="screen5" class="screen">
       <el-row :gutter="10">
         <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
-          <el-image
-            :src="imgLink(linkImg)">
-          </el-image>
+          <el-image :src="`https://septy-test-api.herokuapp.com/${this.screen.img}`"></el-image>
         </el-col>
         <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
-          <h2>{{this.screen5.title}}</h2>
-          <p>{{this.screen5.text}}</p>
-         <!-- <h2>SeptyTest: R&D и ODM</h2>
-          <p>
-            R&D возможности Компании Chymes Laboratories позволяют в кратчайшие сроки разработать и внедрить в производство SeptyTest для любого дезинфицирующего средства по требованию Заказчика.
-            По желанию Заказчика индикаторные наборы могут производиться
-            на условиях ODM под торговой маркой и в брендированной упаковкой Заказчика.
-          </p>-->
+          <h2>{{this.screen.title}}</h2>
+          <p>{{this.screen.text}}</p>
         </el-col>
       </el-row>
     </div>
@@ -25,9 +17,9 @@ import imageLink from '@/plugins/imageLink'
 export default {
   name: "Screen5",
   props:{
-    screen5:{
+    screen:{
       type:Object,
-      default:{}
+      default:{'title':'', 'text':'', 'img':''}
     }
   },
   data() {

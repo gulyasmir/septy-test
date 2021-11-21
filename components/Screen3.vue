@@ -2,8 +2,7 @@
   <div  id="screen3" class="screen">
     <el-row :gutter="10">
       <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
-      <div class="img">
-        <el-image :src="imgLink(linkImgFor)"></el-image>
+      <div class="img"  :style="{backgroundImage: `url(https://septy-test-api.herokuapp.com/${this.screen.img})` }">
       </div>
       </el-col>
       <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
@@ -32,13 +31,12 @@
 </template>
 
 <script>
-import imageLink from '@/plugins/imageLink'
 export default {
   name: "Screen3",
   props:{
     screen:{
       type:Object,
-      default:{'title':'', 'text':''}
+      default:{'title':'', 'text':'','img':''}
     },
     listFor:{
       type:Array,
@@ -47,7 +45,6 @@ export default {
   },
   data() {
     return {
-      linkImgFor:'imagefor.png',
       listFor1:[
         {id:1, text:'Для любых видов дезинфицирующих средств', hideText:'Продукция маркируется индивидуально под ваши требования, в зависимости от внедренной на вашем предприятии системы автоматического учета товара'},
         {id:2, text:'Производится под ваш заказ в любых количествах', hideText:'Продукция маркируется индивидуально под ваши требования, в зависимости от внедренной на вашем предприятии системы автоматического учета товара'},
@@ -59,20 +56,19 @@ export default {
       ]
 
     }
-  },
-  methods:{
-    imgLink(iconName){
-      return imageLink(iconName)
-    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.screen{
-  padding-bottom: 134px;
-}
+    .screen{
+      padding-bottom: 134px;
+    }
 
+    .img{
+      width: 100%;
+      background-size:100%;
+    }
 
     .item{
       display: flex;

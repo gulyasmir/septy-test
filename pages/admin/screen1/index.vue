@@ -23,6 +23,7 @@
             class="upload-demo"
             drag
             action="https://septy-test-api.herokuapp.com/api/upload"
+            :on-success="this.successUpload"
            >
             <el-image :src="imgLink(iconUpload)" class="upload-icon"></el-image>
             <div class="el-upload__text">Перетащите файл сюда <em>или щелкните мышкой тут</em></div>
@@ -62,7 +63,6 @@ export default {
     return{
       screenData:[],
       iconUpload:'upload-icon.png',
-      image:null,
       form: {
         title: '',
         text: '',
@@ -74,43 +74,17 @@ export default {
     this.getScreenData()
   },
   methods: {
-    uploadImg(file, filelist){
-      this.image = [file.raw]
-      this.form.img = file.name
-      this.form.image = file
-      let formDataImg = {file:  this.image}
-
-      console.log('formData', formDataImg)
-
-
-    //  this.$axios.post('http://localhost:8000/api/upload', formDataImg)
-    //    .then(res => {
-     //     console.log(res)
-     //   })
-      //  .catch(err => console.log(err))
-
-    /*  this.axios.post('https://septy-test-api.herokuapp.com/api/upload',
-        this.form,
-        {
-          headers: {
-            'Content-Type': 'multipart/form-data'
-          }
-        }
-      ).then(function(){
-        console.log('SUCCESS!!');
-      })
-        .catch(function(){
-          console.log('FAILURE!!');
-        });*/
+    successUpload(response, file, fileList){
+      this.form.img = response
     },
     async onSubmit() {
       let formData = {
         title: this.form.title,
         text: this.form.text,
-        img: this.form.img,
+        img:  this.form.img,
         id:1
       }
-      console.log('formData', formData)
+
       let  result =  await this.$store.dispatch('updateData/updateScreenData', formData)
 
       if (result.error === true){

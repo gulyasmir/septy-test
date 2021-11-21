@@ -7,9 +7,7 @@
           <p>{{this.screen.text}}</p>
         </el-col>
         <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
-          <el-image
-            :src="imgLink(linkImg)">
-          </el-image>
+          <el-image :src="`https://septy-test-api.herokuapp.com/${this.screen.img}`"></el-image>
         </el-col>
       </el-row>
 
@@ -43,7 +41,7 @@ export default {
   props:{
     screen:{
       type:Object,
-      default:{'title':'', 'text':''}
+      default:{'title':'', 'text':'', 'img':''}
     },
     linkIcons:{
       type:Array,
