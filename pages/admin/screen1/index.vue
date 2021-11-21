@@ -85,7 +85,7 @@ export default {
       console.log('formData', formDataImg)
 
 
-      this.$axios.post('https://septy-test-api.herokuapp.com/api/upload',formDataImg)
+      this.$axios.post('https://septy-test-api.herokuapp.com/api/upload',this.image)
         .then(res => {
           console.log(res)
         })
