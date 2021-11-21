@@ -2,7 +2,8 @@
   <div  id="screen3" class="screen">
     <el-row :gutter="10">
       <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
-      <div class="img"  :style="{backgroundImage: `url(https://septy-test-api.herokuapp.com/${this.screen.img})` }">
+      <div class="img">
+        <el-image :src="this.url"></el-image>
       </div>
       </el-col>
       <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
@@ -56,19 +57,20 @@ export default {
       ]
 
     }
+  },
+  computed:{
+    url(){
+    return  `https://septy-test-api.herokuapp.com/${this.screen.img}`
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-    .screen{
-      padding-bottom: 134px;
-    }
+.screen{
+  padding-bottom: 134px;
+}
 
-    .img{
-      width: 100%;
-      background-size:100%;
-    }
 
     .item{
       display: flex;
