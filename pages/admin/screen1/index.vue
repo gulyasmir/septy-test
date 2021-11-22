@@ -22,7 +22,7 @@
           <el-upload
             class="upload-demo"
             drag
-            action="https://septy-test-api.herokuapp.com/api/upload"
+            action="http://localhost:8000/api/upload"
             :on-success="this.successUpload"
             :on-error="this.errorUpload"
            >

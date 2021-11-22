@@ -67,7 +67,6 @@ export default {
       return imageLink(iconName)
     },
     toUp() {
-      console.log('to up pageYOffset', window.pageYOffset)
       const el = document.getElementById('header');
       el.scrollIntoView({
         behavior: 'smooth'
