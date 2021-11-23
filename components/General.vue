@@ -17,10 +17,10 @@
       :linkIcons="this.list4Data"
     />
     <Screen5
-      :screen5="this.screenData[4]"
+      :screen="this.screenData[4]"
     />
     <Screen6
-      :screen6="this.screenData[5]"
+      :screen="this.screenData[5]"
     />
   </div>
 </div>

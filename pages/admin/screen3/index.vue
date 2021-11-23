@@ -42,7 +42,7 @@
             <el-upload
               class="upload-demo"
               drag
-              action="http://localhost:8000/api/upload"
+              action="http://api.chymes.ru/api/upload"
               :on-success="this.successUpload"
               :on-error="this.errorUpload"
             >

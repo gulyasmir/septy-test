@@ -2,10 +2,10 @@
   <div id="screen6" class="screen">
     <el-row :gutter="10">
       <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
-        <h2>{{this.screen6.title}}</h2>
+        <h2>{{this.screen.title}}</h2>
       </el-col>
       <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
-        <p>{{this.screen6.text}}</p>
+        <p>{{this.screen.text}}</p>
       </el-col>
     </el-row>
 
@@ -59,7 +59,7 @@
 export default {
   name: "Screen6",
   props: {
-    screen6: {
+    screen: {
       type: Object,
       default: {}
     }
