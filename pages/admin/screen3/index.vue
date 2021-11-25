@@ -42,7 +42,7 @@
             <el-upload
               class="upload-demo"
               drag
-              action="http://api.chymes.ru/api/upload"
+              action="https://septy-test-api.herokuapp.com/api/upload"
               :on-success="this.successUpload"
               :on-error="this.errorUpload"
             >
