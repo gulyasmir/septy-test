@@ -19,7 +19,7 @@ export const actions = {
   },
   async updateList2Data({commit}, payload){
     try {
-      const url=`http://api.chymes.ru/api/list-screen2/${payload.id}?text=${payload.text}`
+      const url=`https://septy-test-api.herokuapp.com/api/list-screen2/${payload.id}?text=${payload.text}`
       let resultdata = await this.$axios.put(url)
       return resultdata.data
     } catch(e){
@@ -28,7 +28,7 @@ export const actions = {
   },
   async updateList3Data({commit}, payload){
     try {
-      const url=`http://api.chymes.ru/api/list-screen3/${payload.id}?title=${payload.title}&text=${payload.text}`
+      const url=`https://septy-test-api.herokuapp.com/api/list-screen3/${payload.id}?title=${payload.title}&text=${payload.text}`
       let resultdata = await this.$axios.put(url)
       return resultdata.data
     } catch(e){
@@ -37,7 +37,7 @@ export const actions = {
   },
   async updateList4Data({commit}, payload){
     try {
-      const url=`http://api.chymes.ru/api/list-screen4/${payload.id}?text=${payload.text}`
+      const url=`https://septy-test-api.herokuapp.com/api/list-screen4/${payload.id}?text=${payload.text}`
       let resultdata = await this.$axios.put(url)
       return resultdata.data
     } catch(e){
