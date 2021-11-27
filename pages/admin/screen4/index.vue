@@ -22,7 +22,7 @@
             <el-upload
               class="upload-demo"
               drag
-              action="https://septy-test-api.herokuapp.com/api/upload"
+              action="http://api.chymes.ru/api/upload"
               :on-success="this.successUpload"
               :on-error="this.errorUpload"
             >
@@ -40,6 +40,8 @@
             <el-input v-model="form.item6"></el-input>
             <el-input v-model="form.item7"></el-input>
             <el-input v-model="form.item8"></el-input>
+            <el-input v-model="form.item9"></el-input>
+            <el-input v-model="form.item10"></el-input>
           </el-form-item>
 
           <el-form-item>
@@ -51,7 +53,7 @@
       <el-col :span="12">
         <div class="expample">
         <Screen4
-          :screen="{'title':this.form.title, 'text':this.form.text}"
+          :screen="{'title':this.form.title,'img':this.form.img, 'text':this.form.text}"
           :linkIcons="[
             {id:1, text:this.form.item1},
             {id:2, text:this.form.item2},
@@ -60,7 +62,9 @@
             {id:5, text:this.form.item5},
             {id:6,  text:this.form.item6},
             {id:7,  text:this.form.item7},
-            {id:8,  text:this.form.item8}
+            {id:8,  text:this.form.item8},
+             {id:7,  text:this.form.item9},
+            {id:8,  text:this.form.item10}
         ]"
         />
         </div>
@@ -97,7 +101,9 @@ export default {
         item5: '',
         item6: '',
         item7: '',
-        item8: ''
+        item8: '',
+        item9: '',
+        item10: ''
       }
     }
   },
@@ -111,7 +117,6 @@ export default {
       console.log('file', file)
     },
     successUpload(response, file, fileList){
-      console.log('response', response)
       this.form.img = response
     },
     async onSubmit() {
@@ -123,7 +128,7 @@ export default {
       }
       console.log('formData', formData)
       let  result =  await this.$store.dispatch('updateData/updateScreenData', formData)
-      for (let i=1;i<9;i++){
+      for (let i=1;i<11;i++){
         let titleItem
         switch (i){
           case 1:
@@ -149,6 +154,12 @@ export default {
             break
           case 8:
             titleItem = this.form.item8
+            break
+          case 9:
+            titleItem = this.form.item9
+            break
+          case 10:
+            titleItem = this.form.item10
             break
         }
 
@@ -189,9 +200,12 @@ export default {
       this.form.item6 = this.list4Data[5].text
       this.form.item7 = this.list4Data[6].text
       this.form.item8 = this.list4Data[7].text
+      this.form.item9 = this.list4Data[8].text
+      this.form.item10 = this.list4Data[9].text
     },
     screenData(){
       this.form.title = this.screenData[3].title
+      this.form.img = this.screenData[3].img
       this.form.text = this.screenData[3].text
     }
 

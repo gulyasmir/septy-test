@@ -49,11 +49,12 @@ export default {
 </script>
 
 <style lang="scss">
-
+  
 .full-screen{
  /* background: url("../static/image/banner.png") no-repeat center;*/
   /*  background: url("http://localhost:8000/storage/images/111.jpg") no-repeat center;*/
   background-size:100%;
+   background-repeat:no-repeat;
   display: flex;
   align-items: center;
 

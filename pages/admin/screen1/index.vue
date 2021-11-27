@@ -22,7 +22,7 @@
           <el-upload
             class="upload-demo"
             drag
-            action="https://septy-test-api.herokuapp.com/api/upload"
+            action="http://api.chymes.ru/api/upload"
             :on-success="this.successUpload"
             :on-error="this.errorUpload"
            >
@@ -80,7 +80,6 @@ export default {
       console.log('file', file)
     },
     successUpload(response, file, fileList){
-      console.log('response', response)
       this.form.img = response
     },
     async onSubmit() {

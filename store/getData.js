@@ -1,7 +1,7 @@
 export const actions = {
   async getScreenData(){
     try {
-      const url=`https://septy-test-api.herokuapp.com/api/screen`
+      const url=`http://api.chymes.ru/api/screen`
       let resultdata = await this.$axios.get(url)
       return resultdata.data
     } catch(e){
@@ -10,16 +10,16 @@ export const actions = {
   },
   async getContactData(){
     try {
-      const url=`https://septy-test-api.herokuapp.com/api/contacts`
+      const url=`http://api.chymes.ru/api/contacts`
       let resultdata = await this.$axios.get(url)
-      return resultdata.data[1]
+      return resultdata.data[0]
     } catch(e){
       throw  e
     }
   },
   async getList2Data(){
     try {
-      const url=`https://septy-test-api.herokuapp.com/api/list-screen2`
+      const url=`http://api.chymes.ru/api/list-screen2`
       let resultdata = await this.$axios.get(url)
       return resultdata.data
     } catch(e){
@@ -28,7 +28,7 @@ export const actions = {
   },
   async getList3Data(){
     try {
-      const url=`https://septy-test-api.herokuapp.com/api/list-screen3`
+      const url=`http://api.chymes.ru/api/list-screen3`
       let resultdata = await this.$axios.get(url)
       return resultdata.data
     } catch(e){
@@ -37,7 +37,7 @@ export const actions = {
   },
   async getList4Data(){
     try {
-      const url=`https://septy-test-api.herokuapp.com/api/list-screen4`
+      const url=`http://api.chymes.ru/api/list-screen4`
       let resultdata = await this.$axios.get(url)
       return resultdata.data
     } catch(e){

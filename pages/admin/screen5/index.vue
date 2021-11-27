@@ -22,7 +22,7 @@
           <el-upload
             class="upload-demo"
             drag
-            action="https://septy-test-api.herokuapp.com/api/upload"
+            action="http://api.chymes.ru/api/upload"
             :on-success="this.successUpload"
             :on-error="this.errorUpload"
           >
@@ -40,7 +40,7 @@
     <el-col :span="12">
       <div class="expample">
       <Screen5
-        :screen5="this.form"
+        :screen="this.form"
       />
       </div>
     </el-col>

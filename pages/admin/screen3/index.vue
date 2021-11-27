@@ -42,7 +42,7 @@
             <el-upload
               class="upload-demo"
               drag
-              action="https://septy-test-api.herokuapp.com/api/upload"
+              action="http://api.chymes.ru/api/upload"
               :on-success="this.successUpload"
               :on-error="this.errorUpload"
             >
@@ -60,7 +60,7 @@
       <el-col :span="12">
         <div class="expample">
         <Screen3
-          :screen="{'title':this.form.title, 'text':''}"
+          :screen="{'title':this.form.title,'img':this.form.img, 'text':''}"
           :listFor="[
             {id:1, title:this.form.itemTitle1, text:this.form.itemText1},
             {id:2, title:this.form.itemTitle2, text:this.form.itemText2},
@@ -97,6 +97,7 @@ export default {
       form: {
         title: '',
         img:'',
+        text:'',
         itemTitle1: '',
         itemTitle2: '',
         itemTitle3: '',
@@ -176,6 +177,7 @@ export default {
     },
     async onSubmit() {
           let formData = {
+            text:'text',
             title: this.form.title,
             img:  this.form.img,
             id:3
@@ -264,6 +266,7 @@ export default {
     },
     screenData(){
       this.form.title = this.screenData[2].title
+      this.form.img = this.screenData[2].img
     }
 
   }

@@ -115,14 +115,12 @@ export default {
   },
   watch:{
     contactData(){
-      console.log('this.contactData', this.contactData)
       this.form.address = this.contactData.address
       this.form.email = this.contactData.email
       this.form.site = this.contactData.site
       this.form.whatsapp = this.contactData.whatsapp
     },
     screenData(){
-      console.log('this.screenData', this.screenData)
       let screenInfo = this.screenData[6]
       this.form.title = screenInfo.title
       this.form.text = screenInfo.text

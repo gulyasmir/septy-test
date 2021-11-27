@@ -3,7 +3,7 @@
     <el-row :gutter="10">
       <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
       <div class="img">
-        <el-image :src="this.url"></el-image>
+        <el-image :src="this.screen.img"></el-image>
       </div>
       </el-col>
       <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
@@ -56,11 +56,6 @@ export default {
         {id:7, text:'Не требует утилизации неперерабатываемых отходов', hideText:'Продукция маркируется индивидуально под ваши требования, в зависимости от внедренной на вашем предприятии системы автоматического учета товара'}
       ]
 
-    }
-  },
-  computed:{
-    url(){
-    return  `${this.screen.img}`
     }
   }
 }

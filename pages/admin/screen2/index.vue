@@ -86,9 +86,7 @@ export default {
     this.getList2Data()
 
   },
-  mounted() {
-
-  },
+ 
   methods: {
     makeList(){
       this.list=[
@@ -107,7 +105,7 @@ export default {
         title: this.form.title,
         id:2
       }
-      console.log('formData', formData)
+     
       let  result =  await this.$store.dispatch('updateData/updateScreenData', formData)
       for (let i=1;i<8;i++){
         let titleItem
