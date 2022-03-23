@@ -1,5 +1,7 @@
 NuxtJs landing.
 
+Live https://septytest.herokuapp.com/
+
 # Build Setup
 
 ```bash
