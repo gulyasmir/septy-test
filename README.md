@@ -1,6 +1,6 @@
-NuxtJs landing
+NuxtJs landing.
 
-## Build Setup
+# Build Setup
 
 ```bash
 # install dependencies
