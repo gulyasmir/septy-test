@@ -1,4 +1,3 @@
-# septy-test
 NuxtJs landing
 
 ## Build Setup
